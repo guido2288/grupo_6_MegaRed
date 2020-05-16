@@ -14,7 +14,6 @@ body {
     margin: 2% auto;
     display: grid;
     grid-template-columns: 30% 60%;
-    grid
     width: 100%;
   
    
@@ -44,29 +43,36 @@ body {
     
 }
 
+.contenedorFotos{
+    margin-top: 5%;
+    display: grid;
+    grid-template-columns: 70% 30%;
+}
 
 #fotoGrande{
     display:block;
     border-radius: 10px;
-    max-width: 60%;
-    margin: 5% auto 2% auto;
+    margin: auto;
+    margin-left: auto;
+   width: 80%;
 }
 
-.contenedorFotos{
-    width: 60%;
-    align-items: center;    
+.contenedorFotosP{
+    width: 100%;   
     display: flex;
-    flex-wrap: wrap;
-    margin: 0% auto;
+ 
+    flex-direction: column;
+    
+    
 }
 .fotoPeque{
-    width: 33.3% ;
+    width: 65%;
     box-sizing: border-box;
     border-radius: 5px;   
 }
 .contenedorP{
-    margin: 3% auto;
-    border
+    margin: 8% auto;
+
 }
 
 .agregarCarrito{
@@ -87,14 +93,15 @@ body {
 }
 
 h2, p, #precio{
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', sans-serif; 
+    size: 1em;
 }
 
 #precio {
 font-size: 36px;
 color: white;
 border: solid 1px;
-background-color:#8f9dbb;
+background-color: #b2d7438a;
 width: auto ;
 height:auto ;
 border-radius: 5px;
@@ -102,4 +109,30 @@ border-radius: 5px;
 
 footer{
     margin-top: 30%;
+}
+
+@media (max-width: 1024px){  
+    .contenedorDetalle{
+        margin: 2% auto;
+        display: grid;
+        grid-template-columns: 1fr;
+        width: 90%;
+        background-color:  honeydew ; 
+        border-radius: 15px;
+        padding-bottom: 5%;
+    }
+    .columnaI , .columnaD{
+        background-color: transparent;
+        width: 90%;
+
+    }
+
+    .contenedorFotos{
+        padding-top: 12%; 
+
+      
+    }
+ 
+   
+
 }
