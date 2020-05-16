@@ -21,10 +21,24 @@ header{
     align-self: center;
 }
 
+
 #barra{
     width: 40vw;
+    padding: 10px;
+    border-radius: 4px;
+    border: none;
+    font-size: 15px;
 }
 
+#s-boton{
+    width: 50px;
+    background-color: #1f53c5;
+    padding: 12px 0px;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    font-size: 15px;
+}
 .navegation{
     align-self: center;
 }
@@ -41,6 +55,9 @@ header{
     padding: 16px;
     text-decoration: none;
     font-family: 'Righteous', cursive;
+}
+.navegation ul li a:hover {
+    text-decoration: underline;
 }
 
 
@@ -151,140 +168,77 @@ section.banner img{
 
 /* Footer */
 
-.locales {
-    background-color:  #070357 ;
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
+footer {
+    width: 100%;
+    font-family: 'Roboto', sans-serif;
+
+}
+
+.footer-container {
+    width: 100%;
+    background-color: #272727;
     color: white;
 }
 
-.encontranos {
-    margin: 10px 33px;
-}
-.encontranos h2 {
-    font-family: 'Righteous', cursive;
-}
-.localesCaba ul{
-    list-style: none;
-    font-family: 'Righteous', cursive;
-    margin: 10px 33px;
-}
-
-.localesCaba ul li {
-    margin: 10px 10px;  
-}
-.localesCaba ul li a{
-    text-decoration: none;
-    color: gold;
-    margin: 10px 0px;
-}
-
-
-
-.container-footer {
+.footer-main {
+    width: 98%;
+    max-width: 1000px;
+    margin: auto;
+    padding: 50px 0;
     display: flex;
     flex-wrap: wrap;
-    flex-direction: row;
-    justify-content: space-around;
-    margin: 18px 0px;
-    
+    justify-content: space-between;
 }
-.redes{
-    margin: 0px 40px;
-    align-self: center;
-}
-
-
-.facebook i {
-    font-size: 38px;
-    color: #3e568d;
-}
-.facebook i p {
-    font-size: 15px ;
-    font-weight: bold;
-    float: right;
-    
+.footer-main .footer-columnaA {
+    width: 33.33%;
+    text-align: justify;
 
 }
-.instagram i {
-    font-size: 38px;
-    color: #e4405f;
-}
-.instagram i p {
-    font-size: 15px ;
-    font-weight: bold;
-    float: right;
-    
-
+.footer-main .footer-columnaB {
+    padding: 0px 20px;
 }
 
-.twitter i {
-    font-size: 38px;
-    color: #00baf1;
-}
-.twitter i p {
-    font-size: 15px ;
-    font-weight: bold;
-    float: right;
-    
-
+.footer-main h3 {
+    font-size: 32px;
+    color: rebeccapurple;
+    margin-bottom: 20px;
 }
 
-.nosotros{
-    margin: 0px 40px ;
-    align-self: center;
-}
-.nosotros ul {
-    list-style: none;
-}
-
-.nosotros ul li{
-    margin: 10px 0;
-}
-.nosotros ul li a{
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    text-decoration: none;
-    color: #8C8792 ;
-}
-
-.imgContainer{
-    width: 320px;
-    
-}
-.imgContainer img{
+.suscribite {
+    border: none;
     width: 100%;
+    border: 1px solid rebeccapurple;
+    font-size: 14px;
+    padding: 10px;
+    font-family: 'Roboto', sans-serif;
+}
+.b-suscribite {
+    border: none;
+    background-color: rebeccapurple;
+    color: white;
+    padding: 10px 20px;
+    font-size: 18px;
+    margin-top: 10px;
+    cursor: pointer;
+    font-family: 'Roboto', sans-serif;
 }
 
-.txtprecio p{
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    color: #8C8792;
-    font-size: 12px;
+.footer-columnaB i p {
+    display: inline-block;
+    margin-left: 5px ;
+    margin-bottom: 5px;
+    font-family: 'Roboto', sans-serif;
+
+}
+.footer-redes {
+    text-align: center;
 }
 
-
-
-@media (max-width: 425px) {
-    .container-footer  {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    justify-content: space-around
-
-    }
-    .buscador{
-        order:2;
-    }
-
-
-    
+.footer-redes i{
+    color: white;
+    font-size: 30px;
+    margin: 0 10px;
 }
-
-@media (max-width: 739px) {
-    .redes {
-    display: none;
+.footer-redes i:hover{
+    color:rebeccapurple ;
 }
-.nosotros {
-    display: none;
-}
-} 
