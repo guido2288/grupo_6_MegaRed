@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/CargaStyles.css">
+    <script src="https://kit.fontawesome.com/9552adc6e4.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <title>Mega Red</title>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+           <a href="#"><img class="logo" src="Imagenes/logo2.png"></a>
+           <form action="" class="buscador">
+               <input type="text" value="Busca tu producto..." id="barra">
+               <input type="button" value="Ir">
+           </form>
+            <nav class="navegation">
+                <ul>
+                  <li><a href="#">Login</a></li>
+                  <li><a href="#">Registrate</a></li>
+                  <li><a href="#">Mis Compras</a></li>
+  
+                </ul>
+            </nav>  
+           </div>
+    </header>
+ 
+
+ <!----------FORMULARIO-------------->
+    <form class="contenedor-formulario" action=“validar.php” method=“POST”>
+        <div class="columnaI">
+            <div>
+                <input  class="botonAdj" type="file"  name=“adjuntarimagen” id=“adjuntarimagen”>
+            </div>
+            <div>
+                <img  id="fotoGrande" src="Imagenes/Kit teclado-mouse.webp" alt="Notebook Asus Intel Core I5">
+            </div>
+            <div class="contenedorFotos"> 
+                <img  class="fotoPeque" src="Imagenes/Kit teclado-mouse.webp" alt="Notebook Asus Intel Core I5">
+                <img  class="fotoPeque" src="Imagenes/Kit teclado-mouse.webp" alt="Notebook Asus Intel Core I5">
+                <img  class="fotoPeque" src="Imagenes/Kit teclado-mouse.webp" alt="Notebook Asus Intel Core I5">
+            </div>
+        </div>
+        <div class="columnaD">
+        
+            <p>
+                <input class= itemsFormulario placeholder="nombre" type=“email”  name=“nombre” id=“nombre”>
+            </p>
+            <p>
+                <textarea class= itemsFormulario placeholder="Descripcion" name=“descripcion” id=“descripcion”  rows="15" ></textarea>
+            </p>
+            <div class="contenedorColPeque">
+                <div class="columnaP1">
+                    <p>
+                        <input class= itemPeque  placeholder="codigo" type=“text” name=“codigo” id=“codigo”>
+                    </p>
+                    <p>
+                        <input class= itemPeque  placeholder="precio" type=“number” name=“precio” id=“precio”>
+                    </p>
+                    <p>
+                            <input class= itemPeque  placeholder="stock" type="number" name=“stock” id=“stock”>
+                    </p>
+                </div>
+                <div class="columnaP2">
+                    <p>
+                            <button class= itemPequeBoton id="submit" type="submit">Guardar</button>
+                    </p>
+                    <p>
+                        <button class= itemPequeBoton id="reset" type="reset">resetear</button>
+                    </p>
+                 </div>
+           
+            </div>
+        </div>
+        
+       
+    </form>     
+     
+      
+      
+
+
+    
+</body>
+</html>
