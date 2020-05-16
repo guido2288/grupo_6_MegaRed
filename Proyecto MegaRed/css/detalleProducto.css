@@ -3,46 +3,6 @@
     margin: 0;
     box-sizing: border-box;
 }
-
-/* Header */
-header{
-    background-color: rebeccapurple;
-    
-}
-
-.container{
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    justify-content: space-around;
-    padding: 15px 0;
-}
-
-.buscador{
-    align-self: center;
-}
-
-#barra{
-    width: 40vw;
-}
-
-.navegation{
-    align-self: center;
-}
-.navegation ul {
-    list-style: none;
-}
-.navegation ul li{
-    float: left;
-}
-.navegation ul li a {
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 16px;
-    text-decoration: none;
-    font-family: 'Righteous', cursive;
-}
 /*Detalle Del Producto*/
 
 body {
@@ -106,27 +66,40 @@ body {
 }
 .contenedorP{
     margin: 3% auto;
+    border
 }
 
 .agregarCarrito{
-    font-size:10px;
-    font-family:Verdana,Helvetica;
+    font-size:17px;
+    font-family:'Roboto', sans-serif;
     font-weight:bold;
     color:white;
-    background: #63a4b5;
+    background: rebeccapurple;
     border:0px;
     width:150px;
     height:40px;
     border-radius: 15px;
+    
 }
 
 .columnaD div{
     margin: 2% 2%;
 }
 
-h3 {
-font-size: 30px;
-}
-h2{
+h2, p, #precio{
     font-family: 'Roboto', sans-serif;
+}
+
+#precio {
+font-size: 36px;
+color: white;
+border: solid 1px;
+background-color:#8f9dbb;
+width: auto ;
+height:auto ;
+border-radius: 5px;
+}
+
+footer{
+    margin-top: 30%;
 }
