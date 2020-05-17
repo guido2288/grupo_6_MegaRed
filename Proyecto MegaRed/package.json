@@ -1,0 +1,22 @@
+{
+  "name": "proyecto-megared",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/guido2288/grupo_6_MegaRed.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/guido2288/grupo_6_MegaRed/issues"
+  },
+  "homepage": "https://github.com/guido2288/grupo_6_MegaRed#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}

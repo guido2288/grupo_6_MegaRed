@@ -39,6 +39,7 @@ body {
     flex-direction: column;
     margin-left: 5%;
     max-width: 900px;
+    font-size: 1em;
 
     
 }
@@ -94,17 +95,20 @@ body {
 
 h2, p, #precio{
     font-family: 'Roboto', sans-serif; 
-    size: 1em;
+   
 }
+
 
 #precio {
 font-size: 36px;
 color: white;
 border: solid 1px;
-background-color: #b2d7438a;
+background-color: #1a19c28a;
 width: auto ;
 height:auto ;
 border-radius: 5px;
+padding-left:8px;
+padding-right:8px;
 }
 
 footer{
