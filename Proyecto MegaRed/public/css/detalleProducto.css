@@ -1,0 +1,142 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+/*Detalle Del Producto*/
+
+body {
+    background-color: #E3EAE0;
+    align-items: center;
+}
+
+.contenedorDetalle{
+    margin: 2% auto;
+    display: grid;
+    grid-template-columns: 30% 60%;
+    width: 100%;
+  
+   
+}
+
+.columnaI{
+    background-color: honeydew;
+    border-radius: 15px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin-left: 3%;
+    padding-bottom: 6% ;
+    height: fit-content;
+   
+}
+.columnaD{
+    background-color: honeydew;
+    border-radius: 15px;
+    width:100%;
+    display: flex;
+    flex-direction: column;
+    margin-left: 5%;
+    max-width: 900px;
+    font-size: 1em;
+
+    
+}
+
+.contenedorFotos{
+    margin-top: 5%;
+    display: grid;
+    grid-template-columns: 70% 30%;
+}
+
+#fotoGrande{
+    display:block;
+    border-radius: 10px;
+    margin: auto;
+    margin-left: auto;
+   width: 80%;
+}
+
+.contenedorFotosP{
+    width: 100%;   
+    display: flex;
+ 
+    flex-direction: column;
+    
+    
+}
+.fotoPeque{
+    width: 65%;
+    box-sizing: border-box;
+    border-radius: 5px;   
+}
+.contenedorP{
+    margin: 8% auto;
+
+}
+
+.agregarCarrito{
+    font-size:17px;
+    font-family:'Roboto', sans-serif;
+    font-weight:bold;
+    color:white;
+    background: rebeccapurple;
+    border:0px;
+    width:150px;
+    height:40px;
+    border-radius: 15px;
+    
+}
+
+.columnaD div{
+    margin: 2% 2%;
+}
+
+h2, p, #precio{
+    font-family: 'Roboto', sans-serif; 
+   
+}
+
+
+#precio {
+font-size: 36px;
+color: white;
+border: solid 1px;
+background-color: #1a19c28a;
+width: auto ;
+height:auto ;
+border-radius: 5px;
+padding-left:8px;
+padding-right:8px;
+}
+
+footer{
+    margin-top: 30%;
+}
+
+@media (max-width: 1024px){  
+    .contenedorDetalle{
+        margin: 2% auto;
+        display: grid;
+        grid-template-columns: 1fr;
+        width: 90%;
+        background-color:  honeydew ; 
+        border-radius: 15px;
+        padding-bottom: 5%;
+    }
+    .columnaI , .columnaD{
+        background-color: transparent;
+        width: 90%;
+
+    }
+
+    .contenedorFotos{
+        padding-top: 12%; 
+
+      
+    }
+ 
+   
+
+}

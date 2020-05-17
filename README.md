@@ -20,3 +20,6 @@ Mega Red es una cadena de locales dedicada a la venta de video juegos , producto
  https://www.redbubble.com/es/shop/gamers
  
  https://www.gezatek.com.ar
+ 
+ 
+ Link al Tablero de Trabajo: https://github.com/guido2288/grupo_6_MegaRed/projects/1

@@ -1,0 +1,156 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/*Formulario De Carga*/
+
+body {
+    background-color: #E3EAE0;
+    align-items: center;
+}
+
+#titulo{
+    font-family: 'Righteous', cursive;
+    text-align: left;
+    font-size: 30px;
+    width:70%; 
+    margin: 5px auto;
+}
+
+.contenedor-formulario{
+    margin-top: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: honeydew;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.columnaD{
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.columnaI{
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.itemsFormulario{
+    width: 90%;
+    border: black solid 1px;
+    box-sizing: border-box;
+    margin: 5px;
+    border-radius: 2px;
+    margin: 1vh auto;
+    display: block;
+    font-family: 'Roboto', sans-serif;
+}
+.contenedorColPeque {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 3%;    
+    justify-content: center;
+}
+.columnaP1 {
+    display:flex;
+    flex-direction: column;
+    margin: 1%;
+    width: 40%;
+    justify-content: space-around;
+}
+
+.columnaP2{
+    display:flex;
+    flex-direction: column;
+    margin: 1%;
+    width: 40%;  
+    justify-content: space-around; 
+}
+.itemPeque {
+    width: 90%;
+    border: black solid 1px;
+    box-sizing: border-box;
+    margin: 1vh 2vw;
+    border-radius: 2px;
+    margin: 1vh auto;
+    display: block;
+    font-family: 'Roboto', sans-serif;
+}
+.itemPequeBoton{
+    width: 50%;
+    border: black solid 1px;
+    box-sizing: border-box;
+    border-radius: 2px;
+}
+
+#fotoGrande{
+    display:block;
+    border-radius: 10px;
+    max-width: 60%;
+    margin: 1px auto;
+    
+    
+}
+.contenedorFotos{
+    width: 60%;
+    align-items: center;    
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0% auto;
+}
+
+.fotoPeque{
+    width: 33.3% ;
+
+    box-sizing: border-box;
+    border-radius: 2px;
+    
+}
+#submit{
+    background-color:#83e983;
+}
+#reset{
+    background-color: #e98383;
+}
+.botonAdj{
+    display: block;
+    margin: 1px auto;
+}
+footer{
+    margin-top: 30%;
+}
+
+
+@media (max-width: 1024px){  
+.contenedor-formulario{
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    background-color: honeydew;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.columnaI{
+    width: 100%;
+
+}
+#fotoGrande{
+    width: 70%;
+}
+.columnaD{
+    width: 100%;
+}
+
+}
+ 
