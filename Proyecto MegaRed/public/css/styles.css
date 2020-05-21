@@ -242,3 +242,8 @@ footer {
 .footer-redes i:hover{
     color:rebeccapurple ;
 }
+@media (max-width: 750px ) {
+    .banner {
+        display: none;
+    }
+}
