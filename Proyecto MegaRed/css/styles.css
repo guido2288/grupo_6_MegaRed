@@ -61,6 +61,7 @@ header{
 }
 
 
+
 /* Body */
 
 body {
@@ -244,7 +245,9 @@ footer {
 }
 
 @media (max-width: 750px ) {
-    .banner {
+    .banner{
         display: none;
     }
+
 }
+
