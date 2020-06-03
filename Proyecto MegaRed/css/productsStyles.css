@@ -1,0 +1,253 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+/* Header */
+header{
+    background-color: rebeccapurple;
+    
+}
+
+.container{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 15px 0;
+}
+
+.buscador{
+    align-self: center;
+}
+
+
+#barra{
+    width: 40vw;
+    padding: 10px;
+    border-radius: 4px;
+    border: none;
+    font-size: 15px;
+}
+
+#s-boton{
+    width: 50px;
+    background-color: #1f53c5;
+    padding: 12px 0px;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    font-size: 15px;
+}
+.navegation{
+    align-self: center;
+}
+.navegation ul {
+    list-style: none;
+}
+.navegation ul li{
+    float: left;
+}
+.navegation ul li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 16px;
+    text-decoration: none;
+    font-family: 'Righteous', cursive;
+}
+.navegation ul li a:hover {
+    text-decoration: underline;
+}
+
+
+
+/* Body */
+
+body {
+    background-color: #E3EAE0;
+}
+
+section.banner img{
+    width: 100%;
+}
+
+
+.titulo-sec{
+    font-family: 'Righteous', cursive;
+    text-align: center;
+    font-size: 30px;
+    margin: 30px 0;
+    
+}
+.titulo-sec a{
+    text-decoration: none;
+    color: black;
+}
+
+.producto a{
+    text-decoration: none;
+    color: black;
+}
+.container-productos{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    
+}
+.container-novedades{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.producto{
+    width: 240px;
+    margin: 10px 10px;
+    background-color: white;
+    border-radius: 10px;
+    text-align: center;
+    border-top: thin gray;
+}
+
+.photo-container .photo{
+    width:100%;
+    border-radius: 10px;
+}
+
+
+.descuento{
+    background-color: lawngreen;
+    font-family: 'Righteous', cursive;
+    border-radius: 0px 0px 10px 10px;
+}
+
+.datos-producto{
+    font-family: 'Roboto', sans-serif;
+    border-top: black 3px dotted;
+}
+.photo-container .preventa-datos h2 {
+    background-image: url(../Imagenes/Pre-venta\ \(1\).png);
+    background-size: cover;
+    border-radius: 30px;
+    color: gold;
+}
+.banner2{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-around;
+    margin: 50px 0;
+}
+.banner2 img {
+    border-radius: 10px;
+    width: 350px;
+    margin: 30px 0;
+
+}
+
+.ultimasVisitas {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    background-color: #B89AD6 ;
+}
+
+.ultimasVisitas h3 {
+    text-align: left;
+    font-size: 15px;
+    font-family: 'Roboto', sans-serif;
+    margin: auto 33px;
+}
+.ultimasVisitas h2 {
+    text-align: left;
+    font-size: 30px;    
+    font-family: 'Roboto', sans-serif;
+    margin: auto 33px
+}
+
+
+/* Footer */
+
+footer {
+    width: 100%;
+    font-family: 'Roboto', sans-serif;
+
+}
+
+.footer-container {
+    width: 100%;
+    background-color: #272727;
+    color: white;
+}
+
+.footer-main {
+    width: 98%;
+    max-width: 1000px;
+    margin: auto;
+    padding: 50px 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.footer-main .footer-columnaA {
+    width: 33.33%;
+    text-align: justify;
+
+}
+.footer-main .footer-columnaB {
+    padding: 0px 20px;
+}
+
+.footer-main h3 {
+    font-size: 32px;
+    color: rebeccapurple;
+    margin-bottom: 20px;
+}
+
+.suscribite {
+    border: none;
+    width: 100%;
+    border: 1px solid rebeccapurple;
+    font-size: 14px;
+    padding: 10px;
+    font-family: 'Roboto', sans-serif;
+}
+.b-suscribite {
+    border: none;
+    background-color: rebeccapurple;
+    color: white;
+    padding: 10px 20px;
+    font-size: 18px;
+    margin-top: 10px;
+    cursor: pointer;
+    font-family: 'Roboto', sans-serif;
+}
+
+.footer-columnaB i p {
+    display: inline-block;
+    margin-left: 5px ;
+    margin-bottom: 5px;
+    font-family: 'Roboto', sans-serif;
+
+}
+.footer-redes {
+    text-align: center;
+}
+
+.footer-redes i{
+    color: white;
+    font-size: 30px;
+    margin: 0 10px;
+}
+.footer-redes i:hover{
+    color:rebeccapurple ;
+}
+
+@media (max-width: 750px ) {
+    .banner{
+        display: none;
+    }
+
+}
+
