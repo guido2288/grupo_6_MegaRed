@@ -14,82 +14,20 @@
 <%- include("partials/header"); %>
 
 <!--------products------------------->
-
-
 <section class="container-novedades">
-  <article class="producto">
-      <a href="#">
-      <div class="photo-container">
-       <img class="photo" src="/Imagenes/Ghost of Tsushima.jpg" alt="Notebook Asus Intel Core I5">
-       <div class="preventa-datos">
-       <h2>$6.999</h2>
-    </div>
-      </div>
+   <%for(product of productos){%>
 
-   </a>
-  </article>
-  
-  <article class="producto">
-   <a href="#">
-   <div class="photo-container">
-    <img class="photo" src="/Imagenes/Assassin´s Valhalla.jpg" alt="Notebook Asus Intel Core I5">
-   
-   <div class="preventa-datos">
-    <h2>$7.499</h2>
-</div>
- </div>
-</a>
-</article>
-<article class="producto">
-   <a href="#">
-   <div class="photo-container">
-    <img class="photo" src="/Imagenes/The Last 2.jpg" alt="Notebook Asus Intel Core I5">
- 
-   <div class="preventa-datos">
-    <h2>$6.999</h2>
-</div>
- </div>
-   
-</a>
-</article>
-<article class="producto">
-   <a href="#">
-   <div class="photo-container">
-    <img class="photo" src="/Imagenes/Ciberpunk.jpg" alt="Notebook Asus Intel Core I5">
-   
-   <div class="preventa-datos">
-    <h2>$6.999</h2>
- </div>
-</div>
-</a>
-</article>
-</a>
-</article>
-<article class="producto">
-   <a href="#">
-   <div class="photo-container">
-    <img class="photo" src="/Imagenes/Ciberpunk.jpg" alt="Notebook Asus Intel Core I5">
-   
-   <div class="preventa-datos">
-    <h2>$6.999</h2>
- </div>
-</div>
-</a>
-</article>
-</a>
-</article>
-<article class="producto">
-   <a href="#">
-   <div class="photo-container">
-    <img class="photo" src="/Imagenes/Ciberpunk.jpg" alt="Notebook Asus Intel Core I5">
-   
-   <div class="preventa-datos">
-    <h2>$6.999</h2>
- </div>
-</div>
-</a>
-</article>
-
+      <article class="producto">
+            <a href="#">
+               <div class="photo-container">
+                  <img class="photo" src="<%-product.img%>" alt="Notebook Asus Intel Core I5">
+                  <div class="preventa-datos">
+                     <h2><%-product.precio%></h2>
+                  </div>
+               </div>
+            </a>
+     </article>
+  <% } %>
 </section>
 
 <%- include("partials/footer"); %>

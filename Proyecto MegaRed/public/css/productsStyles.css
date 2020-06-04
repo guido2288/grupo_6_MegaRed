@@ -64,13 +64,7 @@ header{
 
 /* Body */
 
-body {
-    background-color: #E3EAE0;
-}
 
-section.banner img{
-    width: 100%;
-}
 
 
 .titulo-sec{
@@ -96,9 +90,11 @@ section.banner img{
     
 }
 .container-novedades{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
+    margin: 0 auto;
+    background-color: #E3EAE0;
+    width:100%;
+   display:grid;
+   grid-template-columns : 1fr 1fr 1fr 1fr;
 }
 
 .producto{
@@ -108,6 +104,8 @@ section.banner img{
     border-radius: 10px;
     text-align: center;
     border-top: thin gray;
+    margin: 3vh auto;
+    border-radius: 15px;
 }
 
 .photo-container .photo{
