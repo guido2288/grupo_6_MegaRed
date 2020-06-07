@@ -64,105 +64,54 @@ header{
 
 /* Body */
 
-
-
-
-.titulo-sec{
-    font-family: 'Righteous', cursive;
-    text-align: center;
-    font-size: 30px;
-    margin: 30px 0;
-    
-}
-.titulo-sec a{
-    text-decoration: none;
-    color: black;
-}
-
-.producto a{
-    text-decoration: none;
-    color: black;
-}
-.container-productos{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    
-}
 .container-novedades{
-    margin: 0 auto;
+    margin: 10px auto;
     background-color: #E3EAE0;
-    width:100%;
+    width:90%;
    display:grid;
-   grid-template-columns : 1fr 1fr 1fr 1fr;
+   grid-template-columns : 1fr 1fr 1fr 1fr 1fr;
+   border-radius: 30px;
 }
 
 .producto{
-    width: 240px;
+    width: 70%; 
     margin: 10px 10px;
-    background-color: white;
     border-radius: 10px;
     text-align: center;
     border-top: thin gray;
     margin: 3vh auto;
-    border-radius: 15px;
+    border-radius: 30px;
+    padding-bottom: 2vh;
 }
 
 .photo-container .photo{
+    margin-top: 2vh;
     width:100%;
-    border-radius: 10px;
-}
-
-
-.descuento{
-    background-color: lawngreen;
-    font-family: 'Righteous', cursive;
-    border-radius: 0px 0px 10px 10px;
+    border-radius: 15px;
 }
 
 .datos-producto{
     font-family: 'Roboto', sans-serif;
     border-top: black 3px dotted;
 }
-.photo-container .preventa-datos h2 {
+h2 {
     background-image: url(../Imagenes/Pre-venta\ \(1\).png);
     background-size: cover;
     border-radius: 30px;
     color: gold;
 }
-.banner2{
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    justify-content: space-around;
-    margin: 50px 0;
+.botonProduct{
+    width: 45%;
+    border-radius: 30px;
+    margin-top: 1vh;
 }
-.banner2 img {
-    border-radius: 10px;
-    width: 350px;
-    margin: 30px 0;
-
+#borrar{
+    background-color: red;
+}
+#editar{
+    background-color: green;
 }
 
-.ultimasVisitas {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    background-color: #B89AD6 ;
-}
-
-.ultimasVisitas h3 {
-    text-align: left;
-    font-size: 15px;
-    font-family: 'Roboto', sans-serif;
-    margin: auto 33px;
-}
-.ultimasVisitas h2 {
-    text-align: left;
-    font-size: 30px;    
-    font-family: 'Roboto', sans-serif;
-    margin: auto 33px
-}
 
 
 /* Footer */
