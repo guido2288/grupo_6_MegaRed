@@ -64,73 +64,108 @@ header{
 
 /* Body */
 
-.container-novedades{
-    margin: 10px auto;
+body {
     background-color: #E3EAE0;
-    width:90%;
-   display:grid;
-   grid-template-columns : 1fr 1fr 1fr 1fr 1fr;
-   border-radius: 30px;
+}
+
+section.banner img{
+    width: 100%;
+}
+
+
+.titulo-sec{
+    font-family: 'Righteous', cursive;
+    text-align: center;
+    font-size: 30px;
+    margin: 30px 0;
+    
+}
+.titulo-sec a{
+    text-decoration: none;
+    color: black;
+}
+
+.producto a{
+    text-decoration: none;
+    color: black;
+}
+.container-productos{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    
+}
+.container-novedades{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
 }
 
 .producto{
-    width: 70%; 
+    width: 240px;
     margin: 10px 10px;
+    background-color: white;
     border-radius: 10px;
     text-align: center;
     border-top: thin gray;
-    margin: 3vh auto;
-    border-radius: 30px;
-    padding-bottom: 2vh;
 }
 
 .photo-container .photo{
-    margin-top: 2vh;
     width:100%;
-    border-radius: 15px;
+    border-radius: 10px;
+}
+
+
+.descuento{
+    background-color: lawngreen;
+    font-family: 'Righteous', cursive;
+    border-radius: 0px 0px 10px 10px;
 }
 
 .datos-producto{
     font-family: 'Roboto', sans-serif;
     border-top: black 3px dotted;
 }
-h2 {
+.photo-container .preventa-datos h2 {
     background-image: url(../Imagenes/Pre-venta\ \(1\).png);
     background-size: cover;
     border-radius: 30px;
     color: gold;
 }
-.botonProduct{
-    width: 45%;
-    border-radius: 30px;
-    margin-top: 1vh;
+.banner2{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-around;
+    margin: 50px 0;
 }
-#borrar{
-    background-color: red;
-}
-#editar{
-    background-color: green;
+.banner2 img {
+    border-radius: 10px;
+    width: 350px;
+    margin: 30px 0;
+
 }
 
-.add{
-    width: 70%;
-    height: 50%;
-    margin: auto auto;
-    text-align: center;
+.ultimasVisitas {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    background-color: #B89AD6 ;
 }
 
-.addNew{
-    margin: auto auto;
-    display: block;
+.ultimasVisitas h3 {
+    text-align: left;
+    font-size: 15px;
+    font-family: 'Roboto', sans-serif;
+    margin: auto 33px;
+}
+.ultimasVisitas h2 {
+    text-align: left;
+    font-size: 30px;    
+    font-family: 'Roboto', sans-serif;
+    margin: auto 33px
 }
 
-#agregar{
-    width: 100%;
-    color:  rebeccapurple;
-    font-size: 10em;
-    margin: auto auto;
-    
-}
 
 /* Footer */
 

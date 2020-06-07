@@ -15,6 +15,14 @@
 
 <!--------products------------------->
 <section class="container-novedades">
+   <article class="add">
+      <a href="#">
+         <div>
+            <i id=agregar class="fas fa-plus-circle"></i>
+         </div>
+      </a>
+   </article>
+  
    <%for(product of productos){%>
 
       <article class="producto">
@@ -32,6 +40,7 @@
             </div>
      </article>
   <% } %>
+
 </section>
 
 <%- include("partials/footer"); %>
