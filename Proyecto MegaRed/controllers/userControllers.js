@@ -12,7 +12,7 @@ let userController = {
                  password : bcrypt.hashSync(req.body.password, 10)
              }
                //Leo archivo de usuarios
-             let archivoUsers = fs.readFileSync("../data/users.json", {encoding: "utf-8"});
+             let archivoUsers = fs.readFileSync("data/users.json", {encoding: "utf-8"});
                //Verificar si esta vacio
             let usuarios;
 
@@ -27,7 +27,7 @@ let userController = {
                 
              
 
-             fs.writeFileSync("../data/users.json", usuariosJSON);
+             fs.writeFileSync("data/users.json", usuariosJSON);
              
 
              res.redirect("/");
