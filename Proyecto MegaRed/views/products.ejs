@@ -16,7 +16,7 @@
 <!--------products------------------->
 <section class="container-novedades">
    <article class="add">
-      <a href="#">
+      <a href="/products/create">
          <div>
             <i id=agregar class="fas fa-plus-circle"></i>
          </div>
@@ -26,7 +26,7 @@
    <%for(product of productos){%>
 
       <article class="producto">
-            <a href="#">
+            <a href="/products/<%-product.id%>">
                <div class="photo-container">
                   <img class="photo" src="<%-product.img%>" alt="Notebook Asus Intel Core I5">
                   <div class="preventa-datos">
@@ -35,8 +35,10 @@
                </div>
             </a>
             <div>
-               <button class="botonProduct" id="borrar">Borrar</button>
-               <button class="botonProduct" id="editar">Editar</button>
+               <form method="POST"  action="/products/<%-product.id%>?_method=DELETE">
+                  <button onclick="window.location.href='/products/<%-product.id%>/edit'" class="botonProduct" id="borrar">Borrar</button>
+               </form>
+               <button onclick="window.location.href='/products/<%-product.id%>/edit'" class="botonProduct" id="editar">Editar</button>
             </div>
      </article>
   <% } %>

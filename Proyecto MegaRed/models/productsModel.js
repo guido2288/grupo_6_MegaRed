@@ -19,19 +19,75 @@ let productsModel = {
         return products;
     },
     filterByTitle : function(title) {
+       
         let products = this.findAll();
-        //filtramos los datos
-        return products.filter(function(p) {
-            //hago que ambos string sean minusculas con .toLowerCase()
-            //tambien para filtrar y que contenga en cualquier parte esa palabra que me pasaron "title"
-            //para que funcione aplicamos una expresion regular, muy sencilla y facil
-            search = new RegExp(title.toLowerCase())
-            //luego aplicamos el search para hacer una busqueda de esas letras dentro del titulo de cada pelicula, retornara -1 si no la encuentra
-            return p.titulo.toLowerCase().search(search) >= 0;
-        });
+        var array= [];
+        //console.log(products[6].titulo);
+        //console.log(products);
+        for(let i=0; i<products.length; i++){
+            //console.log(products[i].titulo)
+            if (products[i].titulo.indexOf(title) != -1){
+                array.push(products[i]);
+            }
+        }
+        return array
     },
+    detalle : function (e) {
+        let product= this.findAll();
+        //console.log(product)
+        product = product.find( p => e == p.id)
+       
+        return product;
+    },
+        create : function (product) {
+        let array = this.findAll();
+        //le asigno el ultimo id
+        product.id = this.lastID().stringify;
+        //meto la pelicula
+        array.push(product);
+        //convertir a json ese array con la peli nueva
+        jsonData = JSON.stringify(array, null, " ");
+        //escribo
+        fs.writeFileSync(fileData, jsonData);
+    },
+        lastID: function(){
+        let array = this.findAll();
+        let lastID = 0;
+        for (product of array) {
+            if (lastID < product.id) {
+                lastID = product.id;
+            }
+        }
+        lastID++
+        return lastID ;
+    },
+        update: function(producto){
+            let array = this.findAll();
+            
+            //saco la peli anterior
+            array = array.filter(function(algo) {
+                return algo.id != producto.id ;
+            });
+            //pusheo la que me lelgo por parametro
+            array.push(producto);
+    
+            //convertir a json ese array con la peli nueva
+            jsonData = JSON.stringify(array, null, " ");
+            //escribo
+            fs.writeFileSync(fileData, jsonData);
+        },
+        delete: function(producto){
+            let array = this.findAll();
+            
+            //saco la peli anterior
+            array = array.filter(function(algo) {
+                return algo.id != producto.id ;
+            });
 
+            jsonData = JSON.stringify(array, null, " ");
 
+            fs.writeFileSync(fileData, jsonData);
+        }
     
 }
 

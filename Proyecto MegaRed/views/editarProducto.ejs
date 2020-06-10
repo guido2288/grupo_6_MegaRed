@@ -15,49 +15,43 @@
     <!--------Header------------------->
      <%- include("partials/header"); %>
   <!----------FORMULARIO-------------->
-    <form method="POST"  action="/products" enctype="multipart/form-data">
+    <form method="POST"  action="/products/<%-producto.id%>?_method=PUT" enctype="multipart/form-data">
 
         <div class="contenedor-formulario">
             <div class="columnaI">
                 <div>
-                    <input  class="botonAdj" type="file"  name="imagen" id="adjuntarimagen">
+                    <input  class="botonAdj" type="file" value="<%-producto.img%>"   name="imagen" id="adjuntarimagen">
                 </div>
                 <div>
-                    <img  id="fotoGrande" src="/Imagenes/Kit teclado-mouse.webp" alt="Notebook Asus Intel Core I5">
+                    <img  id="fotoGrande" src="<%-producto.img%>" alt="Notebook Asus Intel Core I5">
                 </div>
-                <div class="contenedorFotos"> 
-                    <img  class="fotoPeque" src="/Imagenes/Kit teclado-mouse.webp" alt="Notebook Asus Intel Core I5">
-                    <img  class="fotoPeque" src="/Imagenes/Kit teclado-mouse.webp" alt="Notebook Asus Intel Core I5">
-                    <img  class="fotoPeque" src="/Imagenes/Kit teclado-mouse.webp" alt="Notebook Asus Intel Core I5">
-                </div>
+                
             </div>
             <div class="columnaD">
             
                 <p>
-                    <input class= "itemsFormulario" placeholder="nombre" type="text"  name="nombre" id="nombre">
+                    <input class= "itemsFormulario" placeholder="nombre" type="text" value="<%-producto.titulo%>"  name="nombre" id="nombre">
                 </p>
                 <p>
-                    <textarea class= "itemsFormulario" placeholder="Descripcion" name="descripcion" id="descripcion"  rows="15" ></textarea>
+                    <textarea class= "itemsFormulario" placeholder="Descripcion" name="descripcion" id="descripcion"   rows="15" ><%-producto.descripcion%></textarea>
                 </p>
                 <div class="contenedorColPeque">
                     <div class="columnaP1">
                         <p>
-                            <input class= "itemPeque"  placeholder="codigo" type=“text” name="codigo" id=“codigo”>
+                            <input class= "itemPeque"  placeholder="codigo" type=“text” name="codigo" value="<%-producto.codigo%>"  id=“codigo”>
                         </p>
                         <p>
-                            <input class= "itemPeque"  placeholder="precio" type="number" name="precio" id="precio">
+                            <input class= "itemPeque"  placeholder="precio" type="number" value="<%-producto.precio%>" name="precio" id="precio">
                         </p>
                         <p>
-                                <input class= "itemPeque"  placeholder="stock" type="number" name="stock" id="stock">
+                                <input class= "itemPeque"  placeholder="stock" value="<%-producto.stock%>" type="number" name="stock" id="stock">
                         </p>
                     </div>
                     <div class="columnaP2">
                         <p>
-                            <button class= "itemPequeBoton" id="submit" type="submit">Guardar</button>
+                            <button class= "itemPequeBoton" id="submit"  type="submit">Guardar</button>
                         </p>
-                        <p>
-                            <button class= "itemPequeBoton" id="reset" type="reset">resetear</button>
-                        </p>
+                       
                     </div>
             
                 </div>
