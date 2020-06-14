@@ -17,15 +17,33 @@
 
 <section class="form-register">
     <h4>Formulario de Registro</h4>
-    <form action="" method="POST">
+    <form action="" method="POST" enctype="multipart/form-data">
+        <div>
+          <% if (typeof errors != "undefined") { %>
+              <p>Revisa los errores:</p>
+              <ul>
+                  <% for (let i =0; i < errors.length; i++) { %>
+                    <li>
+                        <%=errors[i].msg%>
+                    </li>
+                  <% } %>
+                </ul>
+          <% } %>
+
+        </div>  
+
     <input class="controls" type="text" name="usuario" id="nombres" placeholder="Ingrese su Usuario">
     <input class="controls" type="email" name="email" id="nombres" placeholder="Ingrese su Correo">
     <input class="controls" type="password" name="password" id="nombres" placeholder="Ingrese su Contraseña">
     <input class="controls" type="password" name="Cpassword" id="nombres" placeholder="Repita su Contraseña">
+
+    <p class= "cAvatar">Carga tu Avatar</p>
+    <input type="file" name="avatar">
     <p>Estoy de acuerdo con <a href="#">Terminos y condiciones</a></p>
     <input class="boton" type="submit" value="Registrarse">
 </form>
-    <p><a href="#">¿Ya tenes cuenta?</a></p>
+
+    <p><a href="/login">¿Ya tenes cuenta?</a></p>
 </section>
   <!--------Footer------------------->
   <%- include("partials/footer"); %>

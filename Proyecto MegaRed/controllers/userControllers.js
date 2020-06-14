@@ -1,15 +1,23 @@
 let fs = require("fs");
 let bcrypt = require ("bcrypt");
+let {check, validationResult, body} = require ("express-validator");
 
 let userController = {
     "register" : function(req, res) {
        res.render("register")
     },
-       create : function (req, res) {
+       create : function (req, res, next) {
+           //Validación de usuario
+             let errors = validationResult(req);
+             console.log(errors)
+
+             if(errors.isEmpty()) {
+
              let usuario = {
                  name : req.body.usuario,
                  email : req.body.email,
-                 password : bcrypt.hashSync(req.body.password, 10)
+                 password : bcrypt.hashSync(req.body.password, 10),
+                 avatar : req.files[0].filename
              }
                //Leo archivo de usuarios
              let archivoUsers = fs.readFileSync("data/users.json", {encoding: "utf-8"});
@@ -31,7 +39,9 @@ let userController = {
              
 
              res.redirect("/");
-
+            }else {
+                return res.render ("register", {errors: errors.errors} )
+            }
        
      },
 

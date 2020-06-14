@@ -5,5 +5,4 @@ let userController = require ("../controllers/userControllers")
 
 
 
-
 module.exports = router;
