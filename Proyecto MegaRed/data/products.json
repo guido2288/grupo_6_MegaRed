@@ -1,35 +1,5 @@
 [
  {
-  "id": "6",
-  "titulo": "FIFA 20",
-  "img": "/Imagenes/FIFA20.jpg",
-  "precio": "1760",
-  "descripcion": "A finales del siglo XIII, el imperio mongol ha arrasado naciones enteras en su campaña por conquistar Oriente. La isla de Tsushima es el único obstáculo que se interpone entre la isla principal de Japón y una gigantesca flota invasora liderada por el astuto y despiadado general Khotun Khan. Cuando Tsushima se hunde en el caos tras el primer ataque de los mongoles,el guerrero samurái Jin Sakai es uno de los últimos sobrevivientes de su clan.Jin está decidido a hacer lo que sea necesario, a cualquier costo, para proteger a su pueblo y recuperar su hogar.Eso lo obligará a apartarse de las tradiciones que lo formaron como guerrero y construir un nuevo camino, el camino del Fantasma, para entablar una guerra poco convencional por la libertad de Tsushima"
- },
- {
-  "id": "7",
-  "titulo": "Mortal Kombat X",
-  "img": "/Imagenes/Mortal Kombat X.jpg",
-  "precio": "1560",
-  "descripcion": "A finales del siglo XIII, el imperio mongol ha arrasado naciones enteras en su campaña por conquistar Oriente. La isla de Tsushima es el único obstáculo que se interpone entre la isla principal de Japón y una gigantesca flota invasora liderada por el astuto y despiadado general Khotun Khan. Cuando Tsushima se hunde en el caos tras el primer ataque de los mongoles,el guerrero samurái Jin Sakai es uno de los últimos sobrevivientes de su clan.Jin está decidido a hacer lo que sea necesario, a cualquier costo, para proteger a su pueblo y recuperar su hogar.Eso lo obligará a apartarse de las tradiciones que lo formaron como guerrero y construir un nuevo camino, el camino del Fantasma, para entablar una guerra poco convencional por la libertad de Tsushima"
- },
- {
-  "id": "8",
-  "titulo": "Hitman",
-  "img": "/Imagenes/Hitman.jpg",
-  "precio": "1860",
-  "descripcion": "A finales del siglo XIII, el imperio mongol ha arrasado naciones enteras en su campaña por conquistar Oriente. La isla de Tsushima es el único obstáculo que se interpone entre la isla principal de Japón y una gigantesca flota invasora liderada por el astuto y despiadado general Khotun Khan. Cuando Tsushima se hunde en el caos tras el primer ataque de los mongoles,el guerrero samurái Jin Sakai es uno de los últimos sobrevivientes de su clan.Jin está decidido a hacer lo que sea necesario, a cualquier costo, para proteger a su pueblo y recuperar su hogar.Eso lo obligará a apartarse de las tradiciones que lo formaron como guerrero y construir un nuevo camino, el camino del Fantasma, para entablar una guerra poco convencional por la libertad de Tsushima"
- },
- {
-  "titulo": "Monster Hunter World",
-  "img": "/imagenes/imagen-1591751854631.jpg",
-  "precio": "30",
-  "descripcion": "Bienvenidos a un nuevo mundo! Conviértete en un gran cazador y acaba con feroces monstruos en un ecosistema lleno de vida donde podrás aprovechar tu entorno y su variada flora y fauna para vencer. ¡Caza solo o en cooperativo con hasta otros tres jugadores y usa los materiales abandonados por tus enemigos caídos para crear nuevo equipo con que luchar con bestias aún más grandes y poderosas",
-  "codigo": "6516",
-  "stock": "80",
-  "id": "9"
- },
- {
   "titulo": "Uncharted 4",
   "img": "/Imagenes/Uncharted.jpg",
   "precio": "1960",
@@ -39,12 +9,48 @@
   "id": "4"
  },
  {
+  "titulo": "Hitman",
+  "img": "/Imagenes/Hitman.jpg",
+  "precio": "1860",
+  "descripcion": "A finales del siglo XIII, el imperio mongol ha arrasado naciones enteras en su campaña por conquistar Oriente. La isla de Tsushima es el único obstáculo que se interpone entre la isla principal de Japón y una gigantesca flota invasora liderada por el astuto y despiadado general Khotun Khan. Cuando Tsushima se hunde en el caos tras el primer ataque de los mongoles,el guerrero samurái Jin Sakai es uno de los últimos sobrevivientes de su clan.Jin está decidido a hacer lo que sea necesario, a cualquier costo, para proteger a su pueblo y recuperar su hogar.Eso lo obligará a apartarse de las tradiciones que lo formaron como guerrero y construir un nuevo camino, el camino del Fantasma, para entablar una guerra poco convencional por la libertad de Tsushima",
+  "codigo": "6508",
+  "stock": "9990",
+  "id": "8"
+ },
+ {
+  "titulo": "FIFA 20",
+  "img": "/Imagenes/FIFA20.jpg",
+  "precio": "1760",
+  "descripcion": "A finales del siglo XIII, el imperio mongol ha arrasado naciones enteras en su campaña por conquistar Oriente. La isla de Tsushima es el único obstáculo que se interpone entre la isla principal de Japón y una gigantesca flota invasora liderada por el astuto y despiadado general Khotun Khan. Cuando Tsushima se hunde en el caos tras el primer ataque de los mongoles,el guerrero samurái Jin Sakai es uno de los últimos sobrevivientes de su clan.Jin está decidido a hacer lo que sea necesario, a cualquier costo, para proteger a su pueblo y recuperar su hogar.Eso lo obligará a apartarse de las tradiciones que lo formaron como guerrero y construir un nuevo camino, el camino del Fantasma, para entablar una guerra poco convencional por la libertad de Tsushima",
+  "codigo": "9840",
+  "stock": "5550",
+  "id": "6"
+ },
+ {
   "titulo": "Cyberpunk",
   "img": "/Imagenes/Ciberpunk.jpg",
   "precio": "1960",
   "descripcion": "A finales del siglo XIII, el imperio mongol ha arrasado naciones enteras en su campaña por conquistar Oriente. La isla de Tsushima es el único obstáculo que se interpone entre la isla principal de Japón y una gigantesca flota invasora liderada por el astuto y despiadado general Khotun Khan. Cuando Tsushima se hunde en el caos tras el primer ataque de los mongoles,el guerrero samurái Jin Sakai es uno de los últimos sobrevivientes de su clan.Jin está decidido a hacer lo que sea necesario, a cualquier costo, para proteger a su pueblo y recuperar su hogar.Eso lo obligará a apartarse de las tradiciones que lo formaron como guerrero y construir un nuevo camino, el camino del Fantasma, para entablar una guerra poco convencional por la libertad de Tsushima",
-  "codigo": "",
-  "stock": "",
+  "codigo": "9840",
+  "stock": "5509",
   "id": "3"
+ },
+ {
+  "titulo": "Monster Hunter World",
+  "img": "/imagenes/imagen-1592192149194.jpg",
+  "precio": "133",
+  "descripcion": "¡Bienvenidos a un nuevo mundo! Conviértete en un gran cazador y acaba con feroces monstruos en un ecosistema lleno de vida donde podrás aprovechar tu entorno y su variada flora y fauna para vencer. ¡Caza solo o en cooperativo con hasta otros tres jugadores y usa los materiales abandonados por tus enemigos caídos para crear nuevo equipo con que luchar con bestias aún más grandes y poderosas!",
+  "codigo": "6516",
+  "stock": "250",
+  "id": 9
+ },
+ {
+  "titulo": "Mortal Kombat 11",
+  "img": "/imagenes/imagen-1592193218773.jpg",
+  "precio": "1560",
+  "descripcion": "A finales del siglo XIII, el imperio mongol ha arrasado naciones enteras en su campaña por conquistar Oriente. La isla de Tsushima es el único obstáculo que se interpone entre la isla principal de Japón y una gigantesca flota invasora liderada por el astuto y despiadado general Khotun Khan. Cuando Tsushima se hunde en el caos tras el primer ataque de los mongoles,el guerrero samurái Jin Sakai es uno de los últimos sobrevivientes de su clan.Jin está decidido a hacer lo que sea necesario, a cualquier costo, para proteger a su pueblo y recuperar su hogar.Eso lo obligará a apartarse de las tradiciones que lo formaron como guerrero y construir un nuevo camino, el camino del Fantasma, para entablar una guerra poco convencional por la libertad de Tsushima",
+  "codigo": "68074",
+  "stock": "98408",
+  "id": "7"
  }
 ]

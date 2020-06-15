@@ -36,12 +36,7 @@ body {
     flex-direction: column;
     justify-content: space-between;
 }
-.columnaI{
-    width: 40%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
+
 .itemsFormulario{
     width: 90%;
     border: black solid 1px;
@@ -93,8 +88,9 @@ body {
 #fotoGrande{
     display:block;
     border-radius: 10px;
-    max-width: 60%;
-    margin: 1px auto;
+    max-width: 100%;
+    margin: auto auto;
+    align-self: center;
     
     
 }
@@ -119,9 +115,15 @@ body {
 #reset{
     background-color: #e98383;
 }
+.columnaI{
+    width: 40%;
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-content: space-between;
+}
 .botonAdj{
     display: block;
-    margin: 1px auto;
+    margin: 0px auto;
 }
 footer{
     margin-top: 30%;
