@@ -7,10 +7,15 @@
        </form>
         <nav class="navegation">
             <ul>
-              <li><a href="../login">Login</a></li>
-              <li><a href="../register">Registrate</a></li>
+                
+              <% if (locals.logeado) { %>
               <li><a href="../carrito">Mis Compras</a></li>
-
+              <li><a href="#"><%= usuarioLogueando  %> </a></li>
+            <% } else { %>
+                <li><a href="../login">Login</a></li>
+                <li><a href="../register">Registrate</a></li>
+            <% } %>
+               
             </ul>
         </nav>  
        </div>
