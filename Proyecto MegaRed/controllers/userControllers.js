@@ -38,7 +38,9 @@ let userController = {
              req.session.logeado = true;
              res.locals.logeado = true;
 
-             res.redirect("/");
+             let usuarioAloguearse = req.body.usuario;
+
+             return res.render("home", {usuarioAloguearse : usuarioAloguearse});
             }else {
                 return res.render ("register", {errors: errors.errors} )
             }
@@ -46,21 +48,8 @@ let userController = {
      },
 
 
-    "carrito" : function(req, res) {
-        res.render("carrito")
-    },
-    "detalleProducto" : function(req, res) {
-        res.render("detalleProducto")
-    },
-    "cargaProducto" : function(req, res) {
-        res.render("cargaProducto")
-    },
-    "home" : function(req, res, next) {
-        let usuarioLogueando = []
-        console.log(usuarioLogueando);
-        res.render("home", {usuarioLogueando : {}});
-        
-    },
+    
+    
     "login" : function (req, res) {
         res.render("login" , {errors : {}})
     },
@@ -83,15 +72,40 @@ let userController = {
         res.cookie("recordar", req.body.usuario, {expires: new Date(Date.now() + 1000*60*60*24*90)});
         } ;
     
+        
         //Busco el usuario y la pass
-        req.session.logeado = true;
-        res.locals.logeado = true; 
-        
+        usuarios.forEach(element => {
+            if (element.name == req.body.usuario &&  bcrypt.compareSync(req.body.password,element.password )) {
+                console.log("encontrado")
+                req.session.logeado = true;
+                res.locals.logeado = true; 
+            
+                let usuarioAloguearse = req.body.usuario;
+                return res.render("home", {usuarioAloguearse : usuarioAloguearse})
+               
+            } 
 
-        return res.redirect("/");
+                
 
+            });
+
+            return res.render("login")
         
-        } 
+       
+        } ,
+        "home" : function(req, res) {
+            res.render("home", {usuarioAloguearse : {}});
+            
+        },
+        "carrito" : function(req, res) {
+            res.render("carrito", {usuarioAloguearse : {}})
+        },
+        "detalleProducto" : function(req, res) {
+            res.render("detalleProducto" ,{usuarioAloguearse : {}})
+        },
+        "cargaProducto" : function(req, res) {
+            res.render("cargaProducto", {usuarioAloguearse : {}})
+        },
 }
     
 
