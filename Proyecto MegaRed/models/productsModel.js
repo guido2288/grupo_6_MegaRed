@@ -42,7 +42,7 @@ let productsModel = {
         create : function (product) {
         let array = this.findAll();
         //le asigno el ultimo id
-        product.id = this.lastID().stringify;
+        product.id = this.lastID();
         //meto la pelicula
         array.push(product);
         //convertir a json ese array con la peli nueva
