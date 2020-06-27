@@ -1,8 +1,16 @@
 let fs = require("fs");
 let bcrypt = require ("bcrypt");
 let {check, validationResult, body} = require ("express-validator");
+let usuarioAloguearse 
+var usuario
 
 let userController = {
+    "home" : function(req, res) {
+        console.log(usuarioAloguearse)
+        
+        res.render("home", {usuarioAloguearse} );
+        
+    },
     "register" : function(req, res) {
        res.render("register")
     },
@@ -12,7 +20,7 @@ let userController = {
 
              if(errors.isEmpty()) {
 
-             let usuario = {
+              usuario = {
                  name : req.body.usuario,
                  email : req.body.email,
                  password : bcrypt.hashSync(req.body.password, 10),
@@ -32,15 +40,17 @@ let userController = {
 
                 usuariosJSON = JSON.stringify(usuarios);
                 
+                console.log("este esesese"+ req.session)
              
 
              fs.writeFileSync("data/users.json", usuariosJSON);
              req.session.logeado = true;
-             res.locals.logeado = true;
+             
 
-             let usuarioAloguearse = req.body.usuario;
+             usuarioAloguearse = usuario;
 
-             return res.render("home", {usuarioAloguearse : usuarioAloguearse});
+
+             return res.redirect("/");
             }else {
                 return res.render ("register", {errors: errors.errors} )
             }
@@ -64,7 +74,7 @@ let userController = {
         //leo Json
         let archivoUsers = fs.readFileSync("data/users.json", {encoding: "utf-8"});
 
-        usuarios = JSON.parse(archivoUsers);
+        let usuarios = JSON.parse(archivoUsers);
         console.log(usuarios);
 
         //Recordarme
@@ -79,9 +89,11 @@ let userController = {
                 console.log("encontrado")
                 req.session.logeado = true;
                 res.locals.logeado = true; 
+                
+                usuarioAloguearse = usuarios.filter(user=>user.name==req.body.usuario);
+                console.log(usuarioAloguearse)
             
-                let usuarioAloguearse = req.body.usuario;
-                return res.render("home", {usuarioAloguearse : usuarioAloguearse})
+                return res.redirect("/")
                
             } 
 
@@ -93,19 +105,21 @@ let userController = {
         
        
         } ,
-        "home" : function(req, res) {
-            res.render("home", {usuarioAloguearse : {}});
-            
-        },
+       
         "carrito" : function(req, res) {
-            res.render("carrito", {usuarioAloguearse : {}})
+            res.render("carrito", {usuarioAloguearse})
         },
         "detalleProducto" : function(req, res) {
-            res.render("detalleProducto" ,{usuarioAloguearse : {}})
+            res.render("detalleProducto" ,{usuarioAloguearse})
         },
         "cargaProducto" : function(req, res) {
-            res.render("cargaProducto", {usuarioAloguearse : {}})
+            res.render("cargaProducto", {usuarioAloguearse})
         },
+        "salir": function(req,res){
+            req.session.logeado = false;
+
+            res.redirect("/")
+        }
 }
     
 

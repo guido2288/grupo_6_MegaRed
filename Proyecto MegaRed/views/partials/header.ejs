@@ -1,6 +1,6 @@
 <header class="header">
     <div class="container">
-       <a href="../home.ejs"><img class="logo" src="/Imagenes/logo2.png"></a>
+       <a href="/"><img class="logo" src="/Imagenes/logo2.png"></a>
        <form action="/products" method="GET" class="buscador">
            <input type="text" placeholder="Busca tu producto..." id="barra" name="busqueda">
            <input id="s-boton" type="submit" value="Ir">
@@ -10,9 +10,9 @@
                 
               <% if (locals.logeado) { %>
               <li><a href="../carrito">Mis Compras</a></li>
-              <li><a href="#"><%= usuarioAloguearse  %> <i class="fa fa-user" aria-hidden="true"></i>
+              <li><a href="../perfil"><i class="fa fa-user" aria-hidden="true"></i>
               </a></li>
-              <li><a href="#">Salir</a></li>
+              <li><a href="/salir">Salir</a></li>
             <% } else { %>
                 <li><a href="../login">Login</a></li>
                 <li><a href="../register">Registrate</a></li>
