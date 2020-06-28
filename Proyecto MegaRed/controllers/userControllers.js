@@ -2,7 +2,10 @@ let fs = require("fs");
 let bcrypt = require ("bcrypt");
 let {check, validationResult, body} = require ("express-validator");
 
+
+
 let userController = {
+
     "register" : function(req, res) {
        res.render("register")
     },
@@ -38,9 +41,9 @@ let userController = {
              req.session.logeado = true;
              res.locals.logeado = true;
 
-             let usuarioAloguearse = req.body.usuario;
+             
 
-             return res.render("home", {usuarioAloguearse : usuarioAloguearse});
+             return res.render("home");
             }else {
                 return res.render ("register", {errors: errors.errors} )
             }
@@ -80,8 +83,8 @@ let userController = {
                 req.session.logeado = true;
                 res.locals.logeado = true; 
             
-                let usuarioAloguearse = req.body.usuario;
-                return res.render("home", {usuarioAloguearse : usuarioAloguearse})
+                
+                return res.render("home")
                
             } 
 
@@ -94,17 +97,17 @@ let userController = {
        
         } ,
         "home" : function(req, res) {
-            res.render("home", {usuarioAloguearse : {}});
+            res.render("home", );
             
         },
         "carrito" : function(req, res) {
-            res.render("carrito", {usuarioAloguearse : {}})
+            res.render("carrito" )
         },
         "detalleProducto" : function(req, res) {
-            res.render("detalleProducto" ,{usuarioAloguearse : {}})
+            res.render("detalleProducto" )
         },
         "cargaProducto" : function(req, res) {
-            res.render("cargaProducto", {usuarioAloguearse : {}})
+            res.render("cargaProducto")
         },
 }
     
