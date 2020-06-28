@@ -61,6 +61,8 @@ router.post("/login", guestMdw  , [
   check("password").isLength({min:8}).withMessage("El password debe tener 8 caracteres como mínimo")
 
 ] , userController.loginPost);
+router.get("/salir",userController.salir)
+
 
 
 module.exports = router;
