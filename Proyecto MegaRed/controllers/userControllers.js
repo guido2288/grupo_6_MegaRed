@@ -7,16 +7,6 @@ var usuario
 
 
 let userController = {
-<<<<<<< HEAD
-
-=======
-    "home" : function(req, res) {
-        console.log(usuarioAloguearse)
-        
-        res.render("home", {usuarioAloguearse} );
-        
-    },
->>>>>>> 635bd597ef7d5d119072cb7ae2102f00aa094c43
     "register" : function(req, res) {
        res.render("register")
     },
@@ -55,14 +45,9 @@ let userController = {
 
              usuarioAloguearse = usuario;
 
-<<<<<<< HEAD
              
 
              return res.render("home");
-=======
-
-             return res.redirect("/");
->>>>>>> 635bd597ef7d5d119072cb7ae2102f00aa094c43
             }else {
                 return res.render ("register", {errors: errors.errors} )
             }
@@ -105,12 +90,8 @@ let userController = {
                 usuarioAloguearse = usuarios.filter(user=>user.name==req.body.usuario);
                 console.log(usuarioAloguearse)
             
-<<<<<<< HEAD
                 
                 return res.render("home")
-=======
-                return res.redirect("/")
->>>>>>> 635bd597ef7d5d119072cb7ae2102f00aa094c43
                
             } 
 
@@ -122,7 +103,6 @@ let userController = {
         
        
         } ,
-<<<<<<< HEAD
         "home" : function(req, res) {
             res.render("home", );
             
@@ -135,17 +115,6 @@ let userController = {
         },
         "cargaProducto" : function(req, res) {
             res.render("cargaProducto")
-=======
-       
-        "carrito" : function(req, res) {
-            res.render("carrito", {usuarioAloguearse})
-        },
-        "detalleProducto" : function(req, res) {
-            res.render("detalleProducto" ,{usuarioAloguearse})
-        },
-        "cargaProducto" : function(req, res) {
-            res.render("cargaProducto", {usuarioAloguearse})
->>>>>>> 635bd597ef7d5d119072cb7ae2102f00aa094c43
         },
         "salir": function(req,res){
             req.session.logeado = false;

@@ -25,7 +25,7 @@ router.post("/register", guestMdw, upload.any(), [
 
   check("usuario").isLength({ min: 1 }).withMessage("El Usuario no puede estar vacio"),
   check("email").isLength({ min: 1 }).withMessage("El Email no puede estar vacio"),
-  check("password").isLength({ min: 8 }).withMessage("El password debe tener 8 caracteres como mínimo"),
+  check("password").isLength({ min: 6 }).withMessage("El password debe tener 8 caracteres como mínimo"),
   body("Cpassword").custom((value, {req})=> {
     if (value !== req.body.password) {
       throw new Error("Los passwords no coinciden")
