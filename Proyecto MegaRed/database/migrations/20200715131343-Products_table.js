@@ -9,8 +9,8 @@ module.exports = {
       precio: {type : Sequelize.INTEGER, allowNull: false},
       stock : {type : Sequelize.INTEGER, allowNull: false},
       img : {type : Sequelize.STRING(500), allowNull: false},
-      genre : {type: Sequelize.INTEGER,references: {model: {tableName: "genres"}, key: "id"}, allowNull: false},
-      platform : {type: Sequelize.INTEGER, references: {model: {tableName: "platform_product"}, key: "product_id"}, allowNull: false}
+      genreId : {type: Sequelize.INTEGER,allowNull: false},
+      platformId : {type: Sequelize.INTEGER,allowNull: false}      
     });
     
   },
@@ -20,3 +20,6 @@ module.exports = {
 
   }
 };
+
+
+ 

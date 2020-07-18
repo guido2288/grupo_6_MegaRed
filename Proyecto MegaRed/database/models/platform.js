@@ -17,13 +17,5 @@ module.exports = (sequelize, dataTypes) => {
         timestamps: false
     };
 
-    Platform.associate = function(models){
-        Platform.belongsToMany(models.Products, {
-            as: "products",
-            through: "platform_product",
-            foreingKey: "platform_id",
-            otherKey: "product_id",
-            timestamps: false
-        })
-    }
+    
 }

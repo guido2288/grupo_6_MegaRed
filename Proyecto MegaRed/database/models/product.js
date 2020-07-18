@@ -34,21 +34,21 @@ module.exports = (sequelize, dataType) => {
         Products.belongsTo(models.Genres, {
             as: "genre",
             foreingKey : "genre_Id"
-        })
+        });
+    };
+    Products.associate = function(models){
+        Products.belongsTo(models.Genres, {
+            as: "platform",
+            foreingKey : "platform_Id"
+            });
         
-        Products.belongsToMany(models.Platform, {
-        as: "platform",
-        through: "platform_product",
-        foreingKey: "product_id",
-        otherKey: "platform_id",
-        timestamps: false
-        })
+        
         
 
-    }
+    };
 
     
 
 
 
-}
+};
