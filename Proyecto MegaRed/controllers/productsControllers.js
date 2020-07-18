@@ -3,6 +3,8 @@ const productModel = require('../models/productsModel');
 const path = require("path")
 
 
+
+
 let productsControllers = {
     products : function (req, res){
         let productos = [];
@@ -89,6 +91,7 @@ let productsControllers = {
 
         res.redirect("/products")
     }
+    
 
 
 }

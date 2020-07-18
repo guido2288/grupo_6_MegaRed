@@ -1,6 +1,8 @@
 let fs = require("fs");
 let bcrypt = require ("bcrypt");
 let {check, validationResult, body} = require ("express-validator");
+
+const db = require("../database/models")
 let usuarioAloguearse 
 var usuario
 
@@ -22,32 +24,20 @@ let userController = {
                  password : bcrypt.hashSync(req.body.password, 10),
                  avatar : req.files[0].filename
              }
-               //Leo archivo de usuarios
-             let archivoUsers = fs.readFileSync("data/users.json", {encoding: "utf-8"});
-               //Verificar si esta vacio
-            let usuarios;
+             //almacenar Usuario registrado en BD
+             db.Users.create(usuario).then(function(){
+                req.session.logeado = true;
+                res.locals.logeado = true;
+                usuarioAloguearse = usuario;
+                return res.render("home");
 
-             if (archivoUsers == "") {
-                usuarios = [];
-             } else {
-                 usuarios = JSON.parse(archivoUsers);
-             };
-                usuarios.push(usuario);
-
-                usuariosJSON = JSON.stringify(usuarios);
-                
-                console.log("este esesese"+ req.session)
-             
-
-             fs.writeFileSync("data/users.json", usuariosJSON);
-             req.session.logeado = true;
-             
-
-             usuarioAloguearse = usuario;
+             })
+             .catch(function(error){
+                 console.error(error);
+                 return res.redirect("register")
+             })
 
              
-
-             return res.render("home");
             }else {
                 return res.render ("register", {errors: errors.errors} )
             }
@@ -58,7 +48,12 @@ let userController = {
     
     
     "login" : function (req, res) {
-        res.render("login" , {errors : {}})
+         res.render("login" , {errors : {}})
+        //aca va con la base de datos
+        db.Users.findAll()
+            .then(function(resultado){
+                return res.send(resultado)
+            })
     },
     "loginPost" : function (req, res) {
         //Errores campos vacios
@@ -68,16 +63,40 @@ let userController = {
             return res.render ("login", {errors: errors.errors}) 
             }; 
 
-        //leo Json
+        
+        //trabajo con BD
+        //almacenar en una variable el usuario y la pass encriptada
+        let usuario = req.body.usuario
+        let password = req.body.password
+
+        //busco por usuario con el metodo findOne
+        db.Users.findAll({
+            where : {
+                name : usuario
+                       
+            }
+        }).then((resultado)=>{
+            console.log(resultado)
+            return res.send(resultado)
+        })
+
+        
+        
+        //Recordarme
+        if (req.body.recordar != undefined) {
+            res.cookie("recordar", req.body.usuario, {expires: new Date(Date.now() + 1000*60*60*24*90)});
+            } ;
+
+        //CODIGO VIEJO
+        //leo Json    
+        /*
         let archivoUsers = fs.readFileSync("data/users.json", {encoding: "utf-8"});
 
         let usuarios = JSON.parse(archivoUsers);
         console.log(usuarios);
+        
 
-        //Recordarme
-        if (req.body.recordar != undefined) {
-        res.cookie("recordar", req.body.usuario, {expires: new Date(Date.now() + 1000*60*60*24*90)});
-        } ;
+        
     
         
         //Busco el usuario y la pass
@@ -97,9 +116,9 @@ let userController = {
 
                 
 
-            });
+            }); 
 
-            return res.render("login")
+            return res.render("login") */
         
        
         } ,

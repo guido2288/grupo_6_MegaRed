@@ -6,6 +6,7 @@ let path = require("path");
 let { check, validationResult, body } = require("express-validator");
 let fs = require("fs");
 const guestMdw = require ("../Middleware/guest")
+const db = require("../database/models")
 
 var storage = multer.diskStorage({
   destination: function (req, file, cb) {
@@ -24,7 +25,16 @@ router.get("/register",guestMdw, userController.register);
 router.post("/register", guestMdw, upload.any(), [
 
   check("usuario").isLength({ min: 1 }).withMessage("El Usuario no puede estar vacio"),
-  check("email").isLength({ min: 1 }).withMessage("El Email no puede estar vacio"),
+  check("email").isLength({ min: 1 }).withMessage("El Email no puede estar vacio")
+   //validacion de email por BD
+    .custom(function(value){
+      return db.Users.findOne({where : {email : value}}).then(user => {
+        if (user != null){
+          return Promise.reject("El mail ya esta en uso")
+        }
+      })
+
+    }),
   check("password").isLength({ min: 6 }).withMessage("El password debe tener 8 caracteres como mínimo"),
   body("Cpassword").custom((value, {req})=> {
     if (value !== req.body.password) {
@@ -32,23 +42,15 @@ router.post("/register", guestMdw, upload.any(), [
     }
     return true
   }),
-
-
-  body("email").custom(function (value) {
-    let usersJSON = fs.readFileSync("data/users.json", { encoding: "utf-8" })
-    if (usersJSON == "") {
-      usuarios = [];
-    } else {
-      usuarios = JSON.parse(usersJSON);
-    };
-    for (let i = 0; i < usuarios.length; i++) {
-      if (usuarios[i].email == value) {
-        return false
-      }
+  /*
+  body("avatar").custom((value,{ req }) => {
+    if(req.file != undefined){
+        const acceptedExtensions = ['.jpg', '.jpeg', '.png'];
+        const ext = path.extname(req.file.originalname)
+        return acceptedExtensions.includes(ext); 
     }
-    return true;
-
-  }).withMessage("El email ya esta registrado")
+    return false ;
+  }).withMessage('La imagen debe tener uno de los siguientes formatos: JPG, JPEG, PNG'), */
 
 
 ], userController.create);

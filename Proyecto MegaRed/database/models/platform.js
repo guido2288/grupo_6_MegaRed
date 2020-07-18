@@ -1,6 +1,5 @@
-
 module.exports = (sequelize, dataTypes) => {
-    let alias = "Genres";
+    let alias = "Platform";
     let col = {
         id : {
             type: dataTypes.INTEGER(11),
@@ -12,18 +11,19 @@ module.exports = (sequelize, dataTypes) => {
         }
 
     };
+    
     let config = {
-        tableName:"genres",
+        tableName:"platform",
         timestamps: false
     };
-    Genres.associate = function(models){
-        Genres.hasMany(models.Products, {
-            as: "product",
-            foreingKey : "product_Id"
+
+    Platform.associate = function(models){
+        Platform.belongsToMany(models.Products, {
+            as: "products",
+            through: "platform_product",
+            foreingKey: "platform_id",
+            otherKey: "product_id",
+            timestamps: false
         })
     }
-    
-
-    
-
 }
