@@ -1,14 +1,16 @@
 
-module.exports = (sequelize, dataTypes) => {
+module.exports = (sequelize, dataType) => {
     let alias = "Genres";
-    let col = {
+    let cols = {
         id : {
-            type: dataTypes.INTEGER(11),
+            type: dataType.INTEGER(11),
             primaryKey: true,
-            autoIncrement: true
+            autoIncrement: true,
+            allowNull: false
         },
         name : {
-            type: dataTypes.STRING(50)
+            type: dataType.STRING(50),
+            allowNull: false    
         }
 
     };
@@ -16,14 +18,17 @@ module.exports = (sequelize, dataTypes) => {
         tableName:"genres",
         timestamps: false
     };
-    Genres.associate = function(models){
-        Genres.hasMany(models.Products, {
+
+    const Genre = sequelize.define(alias, cols, config)
+    
+    Genre.associate = function(models) {
+        Genre.hasMany(models.Products, {
             as: "product",
-            foreingKey : "product_Id"
-        })
+            foreignKey: "genreId"
+        });
     }
     
-
+    return Genre;
     
 
 }

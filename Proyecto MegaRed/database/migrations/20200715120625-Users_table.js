@@ -7,7 +7,7 @@ module.exports = {
       id: {allowNull: false, autoIncrement: true, primaryKey: true, type : Sequelize.INTEGER },
       name: {type : Sequelize.STRING(50), allowNull: false},
       password : {type : Sequelize.STRING(200),allowNull: false},
-      admin : {type : Sequelize.BOOLEAN,defaultValue: false,allowNull: false},
+      admin : {type : Sequelize.INTEGER(11),defaultValue: 0,allowNull: false},
       email : {type : Sequelize.STRING(50),allowNull: false,unique : true},
       avatar : {type : Sequelize.STRING(300),allowNull: false}
     });

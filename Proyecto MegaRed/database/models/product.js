@@ -1,26 +1,31 @@
 
 module.exports = (sequelize, dataType) => {
     let alias = "Products" ;
-    let col = {
+    let cols = {
         id : {
-            type: dataTypes.INTEGER(11),
+            type: dataType.INTEGER(11),
             primaryKey: true,
             autoIncrement: true
         },
         name : {
-            type: dataTypes.STRING(50)
+            type: dataType.STRING(50),
+            allowNull: false
         },
         descripcion : {
-            type: dataTypes.STRING(500)
+            type: dataType.STRING(500),
+            allowNull: false
         },
         precio : {
-            type: dataTypes.INTEGER(11)
+            type: dataType.INTEGER(11),
+            allowNull: false
         },
         stock : {
-            type: dataTypes.INTEGER(11)
+            type: dataType.INTEGER(11),
+            allowNull: false
         },
         img : {
-            type: dataTypes.STRING(500)
+            type: dataType.STRING(500),
+            allowNull: false
         }
         
     };
@@ -29,25 +34,26 @@ module.exports = (sequelize, dataType) => {
         timestamps: false
     };
     
-
-    Products.associate = function(models){
+    const Products = sequelize.define(alias, cols, config)
+    
+    Products.associate = function(models) {
         Products.belongsTo(models.Genres, {
             as: "genre",
-            foreingKey : "genre_Id"
+            foreignKey: "genreId"
         });
-    };
-    Products.associate = function(models){
-        Products.belongsTo(models.Genres, {
-            as: "platform",
-            foreingKey : "platform_Id"
-            });
-        
-        
-        
-
-    };
+    } 
+    
 
     
+    Products.associate = function(models) {
+        Products.belongsTo(models.Platform, {
+            as: "platform",
+            foreignKey: "platformId"
+        });
+    } 
+    
+    
+    return Products;
 
 
 

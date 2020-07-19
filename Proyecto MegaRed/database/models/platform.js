@@ -1,13 +1,15 @@
-module.exports = (sequelize, dataTypes) => {
+module.exports = (sequelize, dataType) => {
     let alias = "Platform";
-    let col = {
+    let cols = {
         id : {
-            type: dataTypes.INTEGER(11),
+            type: dataType.INTEGER(11),
             primaryKey: true,
-            autoIncrement: true
+            autoIncrement: true,
+            allowNull: false
         },
         name : {
-            type: dataTypes.STRING(50)
+            type: dataType.STRING(50),
+            allowNull: false
         }
 
     };
@@ -16,6 +18,16 @@ module.exports = (sequelize, dataTypes) => {
         tableName:"platform",
         timestamps: false
     };
-
+    const Platform = sequelize.define(alias, cols, config)
+    
+    Platform.associate = function(models) {
+        Platform.hasMany(models.Products, {
+            as: "product",
+            foreignKey: "platformId"
+        });
+    }
+    
+    return Platform;
+    
     
 }
