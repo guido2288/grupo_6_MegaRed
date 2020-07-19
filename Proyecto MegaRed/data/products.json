@@ -9,15 +9,6 @@
   "id": "4"
  },
  {
-  "titulo": "Hitman",
-  "img": "/Imagenes/Hitman.jpg",
-  "precio": "1860",
-  "descripcion": "A finales del siglo XIII, el imperio mongol ha arrasado naciones enteras en su campaña por conquistar Oriente. La isla de Tsushima es el único obstáculo que se interpone entre la isla principal de Japón y una gigantesca flota invasora liderada por el astuto y despiadado general Khotun Khan. Cuando Tsushima se hunde en el caos tras el primer ataque de los mongoles,el guerrero samurái Jin Sakai es uno de los últimos sobrevivientes de su clan.Jin está decidido a hacer lo que sea necesario, a cualquier costo, para proteger a su pueblo y recuperar su hogar.Eso lo obligará a apartarse de las tradiciones que lo formaron como guerrero y construir un nuevo camino, el camino del Fantasma, para entablar una guerra poco convencional por la libertad de Tsushima",
-  "codigo": "6508",
-  "stock": "9990",
-  "id": "8"
- },
- {
   "titulo": "FIFA 20",
   "img": "/Imagenes/FIFA20.jpg",
   "precio": "1760",
