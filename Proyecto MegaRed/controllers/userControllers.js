@@ -14,11 +14,10 @@ let userController = {
     },
        create : function (req, res, next) {
            //Validación de usuario
-             let errors = validationResult(req);
-
-             if(errors.isEmpty()) {
-
-              usuario = {
+            let errors = validationResult(req);
+            
+            if(errors.isEmpty()) {                  
+                usuario = {
                  name : req.body.usuario,
                  email : req.body.email,
                  password : bcrypt.hashSync(req.body.password, 10),
@@ -29,7 +28,7 @@ let userController = {
                 req.session.logeado = true;
                 res.locals.logeado = true;
                 usuarioAloguearse = usuario;
-                return res.render("home");
+                return res.render("home", {usuario: usuario.avatar});
 
              })
              .catch(function(error){
