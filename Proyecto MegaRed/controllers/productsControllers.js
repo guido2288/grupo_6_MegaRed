@@ -75,7 +75,10 @@ let productsControllers = {
     },
    
     detalle: function(req,res){
-        db.Products.findByPk(req.params.id)
+        db.Products.findByPk(req.params.id,{
+            // Hay un problema para agregar la asociacion con genre me dice: Association with alias "genre" does not exist on Products.
+            // me fije y esta igual configurado que platform (que si funciona).
+            include:[ "platform"]})
         .then(function(producto){
             res.render("detalleProducto",{producto:producto})
         });
