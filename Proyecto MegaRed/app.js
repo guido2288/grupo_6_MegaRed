@@ -10,9 +10,9 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 const productsRouter= require("./routes/products");
 
-
-const authMdw = require ("./Middleware/auth");
 const userController = require('./controllers/userControllers');
+
+
 
 var app = express();
 
@@ -26,7 +26,8 @@ app.use(session({
   saveUninitialized : true
 }));
 
-app.use(authMdw);
+
+
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));

@@ -14,26 +14,27 @@
 <!--------Header------------------->
 <%- include("partials/header"); %>
 <!--------Formulario------------------->
-  <section class="form-register">
-    <h4>¡Hola! Ingresá tu  usuario</h4>
-    <div>
-      <% if (typeof errors != "undefined") { %>
-          <ul>
-              <% for (let i =0; i < errors.length; i++) { %>
-                <li>
-                    <%=errors[i].msg%>
-                </li>
-              <% } %>
-            </ul>
-      <% } %>
+<section class="form-register">
+  <h4>¡Hola! Ingresá tu  usuario</h4>
+  <div>
+    <% if (typeof errors != "undefined") { %>
+        <ul>
+            <% for (let i =0; i < errors.length; i++) { %>
+              <li>
+                  <%=errors[i].msg%>
+              </li>
+            <% } %>
+          </ul>
+    <% } %>
 
-    </div>  
+  </div>  
+  
 
 
     <form action="" method="POST" >
       
-    <input class="controls" type="text" name="usuario" id="nombres" placeholder="Ingrese su Usuario" >
-    <input class="controls" type="password" name="password" id="nombres" placeholder="Ingrese su Contraseña">
+    <input class="controls" type="text" name="usuario" id="nombres" placeholder="Ingrese su Usuario" value="<%= body.nombres ? body.nombres : ''%>" >
+    <input class="controls" type="password" name="password" id="nombres" placeholder="Ingrese su Contraseña" >
     <input type="checkbox" name="recordar">
     <label for="">Recordame</label>
   

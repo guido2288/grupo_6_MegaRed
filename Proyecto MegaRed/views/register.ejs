@@ -31,8 +31,8 @@
 
         </div>  
 
-    <input class="controls" type="text" name="usuario" id="nombres" placeholder="Ingrese su Usuario">
-    <input class="controls" type="email0" name="email" id="nombres" placeholder="Ingrese su Correo">
+    <input class="controls" type="text" name="usuario" id="nombres" placeholder="Ingrese su Usuario" value="<%= body.usuario ? body.usuario : ''%>">
+    <input class="controls" type="email0" name="email" id="nombres" placeholder="Ingrese su Correo" value="<%= body.email ? body.email : ''%>">
     <input class="controls" type="password" name="password" id="nombres" placeholder="Ingrese su Contraseña minimo de 6 caracteres">
     <input class="controls" type="password" name="Cpassword" id="nombres" placeholder="Repita su Contraseña">
 

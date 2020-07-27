@@ -1,10 +1,10 @@
-module.exports = (req, res, next) => {
-    res.locals.logeado = false;
+//Si no estoy logueado
+
+module.exports = function authMdw (req, res, next) {
+
+	if (!req.session.logeado ) {
+		return res.redirect('/');
+  }
     
-if (req.session.logeado) {
-    res.locals.logeado = true;
+  next();  
 }
-
-  next();
-}
-
