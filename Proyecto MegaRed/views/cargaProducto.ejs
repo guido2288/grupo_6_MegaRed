@@ -38,11 +38,20 @@
                 <div class="contenedorColPeque">
                     <div class="columnaP1">
                         <p>
-                            <select class= "itemPeque"  placeholder="genero" type=“text” name="codigo" id=“codigo”>
+                            <select class= "itemPeque"  placeholder="genero" type=“text” name="genre" id=“genre”>
                                 <option value="">- Genero -</option>
-                                <option value="1">Accion</option>
-                                <option value="2">Terror</option>
-
+                                <%for(genre of generos){%>
+                                <option value="<%-genre.id%>"><%-genre.name%></option>
+                                <% } %>
+                            </select>    
+                        </p>
+                        <p>
+                            <select class= "itemPeque"  placeholder="platform" type=“text” name="platform" id=“platform”>
+                                <option value="">- Plataforma -</option>
+                                <%for(platform of platform){%>
+                                <option value="<%-platform.id%>"><%-platform.name%></option>
+                                <% } %>
+                            </select>    
                         </p>
                         <p>
                             <input class= "itemPeque"  placeholder="precio" type="number" name="precio" id="precio">

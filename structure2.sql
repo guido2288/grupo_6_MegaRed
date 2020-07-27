@@ -19,20 +19,22 @@ USE `mega_red` ;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `mega_red`.`genres` (
   `id` INT(11) NOT NULL AUTO_INCREMENT,
-  `genre` VARCHAR(45) NOT NULL,
+  `name` VARCHAR(50) NOT NULL,
   PRIMARY KEY (`id`))
 ENGINE = InnoDB
+AUTO_INCREMENT = 6
 DEFAULT CHARACTER SET = utf8mb4;
 
 
 -- -----------------------------------------------------
--- Table `mega_red`.`platforms`
+-- Table `mega_red`.`platform`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mega_red`.`platforms` (
-  `id` INT(11) NOT NULL,
-  `platform` VARCHAR(45) NOT NULL,
+CREATE TABLE IF NOT EXISTS `mega_red`.`platform` (
+  `id` INT(11) NOT NULL AUTO_INCREMENT,
+  `name` VARCHAR(50) NOT NULL,
   PRIMARY KEY (`id`))
 ENGINE = InnoDB
+AUTO_INCREMENT = 3
 DEFAULT CHARACTER SET = utf8mb4;
 
 
@@ -41,72 +43,52 @@ DEFAULT CHARACTER SET = utf8mb4;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `mega_red`.`products` (
   `id` INT(11) NOT NULL AUTO_INCREMENT,
-  `titulo` VARCHAR(100) NOT NULL UNIQUE,
-  `descripcion` TEXT NULL DEFAULT NULL,
-  `precio` INT(10) UNSIGNED NOT NULL,
-  `stock` INT(10) UNSIGNED NULL DEFAULT NULL,
-  `img` VARCHAR(150) NOT NULL,
-  `genre_id` INT(11) NULL DEFAULT NULL,
+  `name` VARCHAR(50) NOT NULL,
+  `descripcion` VARCHAR(500) NOT NULL,
+  `precio` INT(11) NOT NULL,
+  `stock` INT(11) NOT NULL,
+  `img` VARCHAR(500) NOT NULL,
+  `genreId` INT(11) NOT NULL UNIQUE,
+  `platformId` INT(11) NOT NULL UNIQUE,
   PRIMARY KEY (`id`),
-  CONSTRAINT `productsGenres`
-    FOREIGN KEY (`genre_id`)
+  CONSTRAINT `genre`
+    FOREIGN KEY (`genreId`)
     REFERENCES `mega_red`.`genres` (`id`)
     ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB
-DEFAULT CHARACTER SET = utf8mb4;
-
-
--- -----------------------------------------------------
--- Table `mega_red`.`platform_product`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mega_red`.`platform_product` (
-  `id` INT(11) NOT NULL,
-  `platform_id` INT(11) NOT NULL,
-  `product_id` INT(11) NOT NULL,
-  PRIMARY KEY (`id`),
-  CONSTRAINT `platformProduct`
-    FOREIGN KEY (`platform_id`)
-    REFERENCES `mega_red`.`platforms` (`id`)
-    ON DELETE NO ACTION
     ON UPDATE NO ACTION,
-  CONSTRAINT `productPlatform`
-    FOREIGN KEY (`product_id`)
-    REFERENCES `mega_red`.`products` (`id`)
+  CONSTRAINT `platform`
+    FOREIGN KEY (`platformId`)
+    REFERENCES `mega_red`.`platform` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB
+AUTO_INCREMENT = 11
 DEFAULT CHARACTER SET = utf8mb4;
 
 
 -- -----------------------------------------------------
--- Table `mega_red`.`usertype`
+-- Table `mega_red`.`sequelizemeta`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mega_red`.`usertype` (
-  `id` INT(11) NOT NULL,
-  `userType` VARCHAR(45) NOT NULL,
-  PRIMARY KEY (`id`))
+CREATE TABLE IF NOT EXISTS `mega_red`.`sequelizemeta` (
+  `name` VARCHAR(255) NOT NULL UNIQUE,
+  PRIMARY KEY (`name`),
 ENGINE = InnoDB
-DEFAULT CHARACTER SET = utf8mb4;
+DEFAULT CHARACTER SET = utf8
+COLLATE = utf8_unicode_ci;
 
 
 -- -----------------------------------------------------
 -- Table `mega_red`.`users`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `mega_red`.`users` (
-  `id` INT(11) NOT NULL,
-  `name` VARCHAR(100) NOT NULL UNIQUE,
-  `email` VARCHAR(100) NOT NULL UNIQUE,
-  `password` VARCHAR(150) NOT NULL,
-  `avatar` VARCHAR(150) NULL DEFAULT NULL,
-  `type_id` INT(11) NOT NULL,
+  `id` INT(11) NOT NULL AUTO_INCREMENT,
+  `name` VARCHAR(50) NOT NULL,
+  `password` VARCHAR(200) NOT NULL,
+  `admin` TINYINT(1) NOT NULL DEFAULT 0,
+  `email` VARCHAR(50) NOT NULL UNIQUE,
+  `avatar` VARCHAR(300) NOT NULL,
   PRIMARY KEY (`id`),
-  CONSTRAINT `userUsertype`
-    FOREIGN KEY (`type_id`)
-    REFERENCES `mega_red`.`usertype` (`id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB
+ ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8mb4;
 
 

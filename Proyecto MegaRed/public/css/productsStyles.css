@@ -213,6 +213,9 @@ footer {
     .banner{
         display: none;
     }
+    .container-novedades{
+        grid-template-columns: 1fr;
+    }
 
 }
 
