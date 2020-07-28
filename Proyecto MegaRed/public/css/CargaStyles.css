@@ -10,6 +10,26 @@ body {
     background-color: #E3EAE0;
     align-items: center;
 }
+.errors{
+    
+    margin-top: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: honeydew;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+   
+}
+
+.erroritem{
+    list-style: none;
+    margin: 1px auto;
+}
+
+
 
 #titulo{
     font-family: 'Righteous', cursive;

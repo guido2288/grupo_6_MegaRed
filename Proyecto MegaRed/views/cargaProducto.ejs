@@ -15,7 +15,25 @@
     <!--------Header------------------->
      <%- include("partials/header"); %>
   <!----------FORMULARIO-------------->
+
+  <div class="errors">
+    <% if (typeof errors != "undefined") { %>
+        <ul>
+            <% for (let i =0; i < errors.length; i++) { %>
+              <li class="erroritem">
+                  <%=errors[i].msg%>
+              </li>
+            <% } %>
+          </ul>
+    <% } %>
+
+  </div>  
+
+  
     <form method="POST"  action="/products" enctype="multipart/form-data">
+       
+  
+        
 
         <div class="contenedor-formulario">
             <div class="columnaI">

@@ -3,6 +3,7 @@ const productModel = require('../models/productsModel');
 const path = require("path");
 const db = require("../database/models");
 const { Op } = require("sequelize");
+let {check, validationResult, body} = require ("express-validator");
 
 
 
@@ -48,29 +49,38 @@ let productsControllers = {
     },
 
     create: function (req, res, next){ 
-        var imagen = "/imagenes/" + req.files[0].filename;
-        
-      
-        db.Products.create({
-            name : req.body.nombre,
-            img: imagen,
-            precio: req.body.precio,
-            descripcion: req.body.descripcion,
-            genreId: req.body.genre,
-            platformId: req.body.platform,
-            stock: req.body.stock
-        }).then(function(){
-            res.redirect("/products")
-        })
-        
-        
-        .catch(function(error){
-            console.log(error);
-        }) 
-        //console.log(newProduct);
+        let errors = validationResult(req);
+       // console.log(errors);
 
+        if (!errors.isEmpty()) {
+            db.Platform.findAll()
+            .then(function(platform){
+                db.Genres.findAll().
+                then(function(generos){
+                    res.render("cargaProducto", {generos, platform, errors: errors.errors});
+                })
+            })
+            } else {
+                var imagen = "/imagenes/" + req.files[0].filename;
+                db.Products.create({
+                    name : req.body.nombre,
+                    img: imagen,
+                    precio: req.body.precio,
+                    descripcion: req.body.descripcion,
+                    genreId: req.body.genre,
+                    platformId: req.body.platform,
+                    stock: req.body.stock
+                }).then(function(){
+                    res.redirect("/products")
+                })
+                
+                
+                .catch(function(error){
+                    console.log(error);
+                }) 
+                //console.log(newProduct);
+            }
         
-
       
     },
    
@@ -101,11 +111,14 @@ let productsControllers = {
         });
     },
     edit: function(req , res, next){
+
+
+
         db.Products.findByPk(req.params.id)
         .then(function(producto){
             var producto = producto
             var imagen= "";
-            console.log(req);
+            //console.log(req);
             if(req.files.length > 0){
                 imagen = "/imagenes/" + req.files[0].filename;
             } else {
@@ -125,6 +138,7 @@ let productsControllers = {
                     res.redirect("/products")
                 })
         })
+        
     },
     delete: function(req , res){
         
