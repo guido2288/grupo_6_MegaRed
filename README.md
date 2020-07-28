@@ -1,3 +1,9 @@
+
+
+# Link al Tablero de Trabajo: https://github.com/guido2288/grupo_6_MegaRed/projects
+
+
+
 # grupo_6_MegaRed
 Proyecto 
 Mega Red es una cadena de locales dedicada a la venta de video juegos , productos para PC de alta gama, merchandising y regalos frikis   para todo aficionado. Nuestra meta es ofrecer productos de calidad, y brindar el mejor servicio a nuestros clientes. 
@@ -22,4 +28,3 @@ Mega Red es una cadena de locales dedicada a la venta de video juegos , producto
  https://www.gezatek.com.ar
  
  
- Link al Tablero de Trabajo: https://github.com/guido2288/grupo_6_MegaRed/projects/1
