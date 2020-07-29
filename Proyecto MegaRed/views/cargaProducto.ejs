@@ -30,7 +30,7 @@
   </div>  
 
   
-    <form method="POST"  action="/products" enctype="multipart/form-data">
+    <form method="POST" id="formCarga" action="/products" enctype="multipart/form-data">
        
   
         
@@ -39,9 +39,11 @@
             <div class="columnaI">
                 <div>
                     <input  class="botonAdj" type="file"  name="imagen" id="adjuntarimagen">
+                    <div id="erroradjuntarimagen"></div>
                 </div>
                 <div>
                     <img  id="fotoGrande" src="/Imagenes/Kit teclado-mouse.webp" alt="Notebook Asus Intel Core I5">
+                   
                 </div>
               
             </div>
@@ -49,33 +51,40 @@
             
                 <p>
                     <input class= "itemsFormulario" placeholder="nombre" type="text"  name="nombre" id="nombre">
+                    <div id="errorEmail"></div>
                 </p>
                 <p>
                     <textarea class= "itemsFormulario" placeholder="Descripcion" name="descripcion" id="descripcion"  rows="15" ></textarea>
+                    <div id="errorDescripcion"></div>
                 </p>
                 <div class="contenedorColPeque">
                     <div class="columnaP1">
                         <p>
-                            <select class= "itemPeque"  placeholder="genero" type=“text” name="genre" id=“genre”>
+                            <select class= "itemPeque"  placeholder="genero" type="text" name="genre" id="genre">
                                 <option value="">- Genero -</option>
                                 <%for(genre of generos){%>
                                 <option value="<%-genre.id%>"><%-genre.name%></option>
                                 <% } %>
                             </select>    
+                            <div id="errorGenero"></div>
                         </p>
                         <p>
-                            <select class= "itemPeque"  placeholder="platform" type=“text” name="platform" id=“platform”>
+                            <select class= "itemPeque"  placeholder="platform" type=“text” name="platform" id="platform">
                                 <option value="">- Plataforma -</option>
                                 <%for(platform of platform){%>
                                 <option value="<%-platform.id%>"><%-platform.name%></option>
                                 <% } %>
-                            </select>    
+                               
+                            </select>
+                            <div id="errorPlatform"></div>    
                         </p>
                         <p>
                             <input class= "itemPeque"  placeholder="precio" type="number" name="precio" id="precio">
+                            <div   id="errorPrecio"></div>
                         </p>
                         <p>
                                 <input class= "itemPeque"  placeholder="stock" type="number" name="stock" id="stock">
+                                <div   id="errorStock"></div>
                         </p>                      
                     </div>
                     <div class="columnaP2">
@@ -95,6 +104,7 @@
     
       <!--------Footer------------------->
       <%- include("partials/footer"); %>
-    
+
 </body>
+<script src="/js/cargaProducto.js"></script>
 </html>
