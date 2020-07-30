@@ -15,6 +15,17 @@
     <!--------Header------------------->
      <%- include("partials/header"); %>
   <!----------FORMULARIO-------------->
+  <div class="errors">
+    <% if (typeof errors != "undefined") { %>
+        <ul>
+            <% for (let i =0; i < errors.length; i++) { %>
+              <li class="erroritem">
+                  <%=errors[i].msg%>
+              </li>
+            <% } %>
+          </ul>
+    <% } %>
+  </div>
     <form method="POST" id="formCarga" action="/products/<%-producto.id%>?_method=PUT" enctype="multipart/form-data">
 
         <div class="contenedor-formulario">
@@ -44,7 +55,8 @@
                             <select class= "itemPeque"  placeholder="genero" type=“text” name="genre" id="genre">
                                 <option value="">- Genero -</option>
                                 <%for(genre of generos){%>
-                                <option value="<%-genre.id%>"><%-genre.name%></option>
+                                <option value="<%-genre.id%>"<%= (genre.id == producto.genreId) ? 'selected' : '' %>>
+                                    <%-genre.name%></option>
                                 <% } %>
                             </select>    
                             <div id="errorGenero"></div>
@@ -52,8 +64,9 @@
                         <p>
                             <select class= "itemPeque"  placeholder="platform" type=“text” name="platform" id="platform">
                                 <option value="">- Plataforma -</option>
-                                <%for(platform of platform){%>
-                                <option value="<%-platform.id%>"><%-platform.name%></option>
+                                <%for(pl of platform){%>
+                                <option value="<%-pl.id%>" <%= (pl.id == producto.platformId) ? 'selected' : '' %>>
+                                    <%-pl.name%></option>
                                 <% } %>
                             </select>    
                             <div id="errorPlatform"></div> 
@@ -82,6 +95,7 @@
     
       <!--------Footer------------------->
       <%- include("partials/footer"); %>
+      
     
 </body>
 <script src="/js/editarProducto.js"></script>
