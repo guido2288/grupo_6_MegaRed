@@ -50,11 +50,11 @@
             <div class="columnaD">
             
                 <p>
-                    <input class= "itemsFormulario" placeholder="nombre" type="text"  name="nombre" id="nombre">
+                    <input class= "itemsFormulario" placeholder="nombre" type="text" value="<%-body.nombre%>" name="nombre" id="nombre">
                     <div id="errorEmail"></div>
                 </p>
                 <p>
-                    <textarea class= "itemsFormulario" placeholder="Descripcion" name="descripcion" id="descripcion"  rows="15" ></textarea>
+                    <textarea class= "itemsFormulario" placeholder="Descripcion" value="" name="descripcion" id="descripcion"  rows="15" ><%-body.descripcion%></textarea>
                     <div id="errorDescripcion"></div>
                 </p>
                 <div class="contenedorColPeque">
@@ -63,7 +63,7 @@
                             <select class= "itemPeque"  placeholder="genero" type="text" name="genre" id="genre">
                                 <option value="">- Genero -</option>
                                 <%for(genre of generos){%>
-                                <option value="<%-genre.id%>"><%-genre.name%></option>
+                                <option value="<%-genre.id%>"<%= (genre.id == body.genre) ? 'selected' : '' %>><%-genre.name%></option>
                                 <% } %>
                             </select>    
                             <div id="errorGenero"></div>
@@ -72,18 +72,18 @@
                             <select class= "itemPeque"  placeholder="platform" type=“text” name="platform" id="platform">
                                 <option value="">- Plataforma -</option>
                                 <%for(platform of platform){%>
-                                <option value="<%-platform.id%>"><%-platform.name%></option>
+                                <option value="<%-platform.id%>"  <%= (platform.id == body.platform) ? 'selected' : '' %>><%-platform.name%></option>
                                 <% } %>
                                
                             </select>
                             <div id="errorPlatform"></div>    
                         </p>
                         <p>
-                            <input class= "itemPeque"  placeholder="precio" type="number" name="precio" id="precio">
+                            <input class= "itemPeque"  placeholder="precio" value="<%-body.precio%>" type="number" name="precio" id="precio">
                             <div   id="errorPrecio"></div>
                         </p>
                         <p>
-                                <input class= "itemPeque"  placeholder="stock" type="number" name="stock" id="stock">
+                                <input class= "itemPeque"  placeholder="stock" value="<%-body.stock%>"type="number" name="stock" id="stock">
                                 <div   id="errorStock"></div>
                         </p>                      
                     </div>
@@ -106,5 +106,5 @@
       <%- include("partials/footer"); %>
 
 </body>
-<!--- <script src="/js/cargaProducto.js"></script>-->
+<script src="/js/cargaProducto.js"></script>
 </html>

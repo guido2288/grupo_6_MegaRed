@@ -38,7 +38,7 @@ let productsControllers = {
             .then(function(platform){
                 db.Genres.findAll().
                 then(function(generos){
-                    res.render("cargaProducto", {generos, platform});
+                    res.render("cargaProducto", {generos,body, platform});
                 })
 
             })
@@ -51,13 +51,13 @@ let productsControllers = {
     create: function (req, res, next){ 
         let errors = validationResult(req);
        // console.log(errors);
-
+        console.log(req.body)
         if (!errors.isEmpty()) {
             db.Platform.findAll()
             .then(function(platform){
                 db.Genres.findAll().
                 then(function(generos){
-                    res.render("cargaProducto", {generos, platform, errors: errors.errors});
+                    res.render("cargaProducto", {generos, platform, body: req.body, errors: errors.errors});
                 })
             })
             } else {
