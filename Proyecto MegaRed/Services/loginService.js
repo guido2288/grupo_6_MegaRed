@@ -7,7 +7,7 @@ module.exports = {
         res.locals.logeado = true;
         res.locals.user = user;
         req.session.logeado = true;
-        req.session.user = user.name;
+        req.session.user = user;
         
     }
     

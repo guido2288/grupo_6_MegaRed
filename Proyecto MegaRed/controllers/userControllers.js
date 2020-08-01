@@ -25,7 +25,7 @@ let userController = {
              //almacenar Usuario registrado en BD
              db.Users.create(usuario).then(function(user){
                 loginService.loginUser(req, res, user);              
-                return res.render("home", {usuario: usuario.name});
+                return res.render("perfil");
 
              })
              .catch(function(error){
@@ -67,7 +67,7 @@ let userController = {
             loginService.loginUser(req, res, user);
             
                     
-            return res.render("home", {usuario: req.session.user}) 
+            return res.render("perfil") 
         }).catch((error) => {
             console.error(error);
             return res.redirect('login');
@@ -89,6 +89,9 @@ let userController = {
         },
         "cargaProducto" : function(req, res) {
             res.render("cargaProducto",{usuario: req.session.user})
+        },
+        "perfil" : function(req, res) {
+            res.render("perfil")
         },
         "salir": function(req,res){
             req.session.logeado = false;

@@ -10,7 +10,7 @@
                 
               <% if (locals.logeado) { %>
               <li><a href="../carrito">Mis Compras</a></li>
-              <li><a href="#"><%= usuario %></a></li>
+              <li><a href="/perfil"> <%= locals.user.name %></a></li>
               <li><a href="/salir">Salir</a></li>
               <li><a href="../products">productos</a></li>
             <% } else { %>

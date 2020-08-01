@@ -22,7 +22,8 @@ const storage = multer.diskStorage({
   }
 })
 
-const upload = multer({storage:storage})
+const upload = multer({storage:storage })
+
 /* GET home page. */
 router.get("/", userController.home);
 router.get("/register",guestMdw ,userController.register);
@@ -46,6 +47,14 @@ router.post("/register", upload.any(), [
     }
     return true
   }),
+  body('avatar').custom((value, { req }) => {
+    if(req.files != undefined){
+        const acceptedExtensions = ['.jpg', '.jpeg', '.png'];
+        const ext = path.extname(req.files[0].originalname)
+        return acceptedExtensions.includes(ext);
+    }
+    return false;
+    }).withMessage('La imagen debe tener uno de los siguientes formatos: JPG, JPEG, PNG'),
 
 
 ], userController.create);
@@ -69,6 +78,7 @@ router.post("/login" , [
 router.get("/carrito",authMdw , userController.carrito);
 router.get("/detalleProducto", userController.detalleProducto);
 router.get("/cargaProducto", userController.cargaProducto);
+router.get("/perfil", userController.perfil );
 router.get("/salir",userController.salir);
 
 
