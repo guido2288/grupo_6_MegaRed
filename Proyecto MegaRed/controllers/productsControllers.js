@@ -111,34 +111,47 @@ let productsControllers = {
         });
     },
     edit: function(req , res, next){
+        let errors = validationResult(req);
+       // console.log(errors);
 
-
-
-        db.Products.findByPk(req.params.id)
-        .then(function(producto){
-            var producto = producto
-            var imagen= "";
-            //console.log(req);
-            if(req.files.length > 0){
-                imagen = "/imagenes/" + req.files[0].filename;
-            } else {
-                imagen= producto.img;
-            }
-            db.Products.update({
-                name : req.body.nombre,
-                img: imagen,
-                precio: req.body.precio,
-                descripcion: req.body.descripcion,
-                genreId: req.body.genre,
-                platformId: req.body.platform,
-                stock: req.body.stock
-                },{
-                    where: {id: req.params.id}
-                }).then(function(){
-                    res.redirect("/products")
-                })
-        })
-        
+        if (!errors.isEmpty()) {
+           
+            db.Products.findByPk(req.params.id)
+            .then(function(producto){
+            db.Platform.findAll().
+                then(function(platform){
+                    db.Genres.findAll().
+                        then(function(generos){
+                            res.render("editarProducto", {producto, generos, platform, errors: errors.errors});
+                        })
+                 }) 
+            })
+                } else {
+                db.Products.findByPk(req.params.id)
+                .then(function(producto){
+                    var producto = producto
+                    var imagen= "";
+                    //console.log(req);
+                    if(req.files.length > 0){
+                        imagen = "/imagenes/" + req.files[0].filename;
+                    } else {
+                        imagen= producto.img;
+                    }
+                    db.Products.update({
+                        name : req.body.nombre,
+                        img: imagen,
+                        precio: req.body.precio,
+                        descripcion: req.body.descripcion,
+                        genreId: req.body.genre,
+                        platformId: req.body.platform,
+                        stock: req.body.stock
+                        },{
+                            where: {id: req.params.id}
+                        }).then(function(){
+                            res.redirect("/products")
+                        })
+                    })
+                }
     },
     delete: function(req , res){
         
