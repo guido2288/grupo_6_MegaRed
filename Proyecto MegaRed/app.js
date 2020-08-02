@@ -12,6 +12,8 @@ const productsRouter= require("./routes/products");
 
 const userController = require('./controllers/userControllers');
 
+const sessionMdw = require("./Middleware/sessionMdw")
+
 
 
 var app = express();
@@ -27,7 +29,7 @@ app.use(session({
 }));
 
 
-
+app.use(sessionMdw);
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));

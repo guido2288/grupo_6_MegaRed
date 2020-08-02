@@ -57,6 +57,7 @@ router.post("/register", upload.any(), [
     }).withMessage('La imagen debe tener uno de los siguientes formatos: JPG, JPEG, PNG'),
 
 
+
 ], userController.create);
 
 router.get("/login", guestMdw , userController.login);
@@ -78,7 +79,7 @@ router.post("/login" , [
 router.get("/carrito",authMdw , userController.carrito);
 router.get("/detalleProducto", userController.detalleProducto);
 router.get("/cargaProducto", userController.cargaProducto);
-router.get("/perfil", userController.perfil );
+router.get("/perfil",authMdw, userController.perfil );
 router.get("/salir",userController.salir);
 
 

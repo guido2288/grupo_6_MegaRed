@@ -41,6 +41,9 @@
     text-decoration: none;
     color: black;
 }
+.invalid-feedback {
+    color: black;
+}
 
 .form-register a:hover {
     text-decoration: underline;

@@ -17,24 +17,11 @@
 <!--------Formulario------------------->
 <section class="form-register">
   <h4>¡Hola! Ingresá tu  usuario</h4>
-  <div>
-    <% if (typeof errors != "undefined") { %>
-        <ul>
-            <% for (let i =0; i < errors.length; i++) { %>
-              <li>
-                  <%=errors[i].msg%>
-              </li>
-            <% } %>
-          </ul>
-    <% } %>
-
-  </div>  
   
-
-
     <form action="" method="POST" >
-      
+    <div class="invalid-feedback"><%= errors.usuario ? errors.usuario.msg : ''%></div>
     <input class="controls" type="text" name="usuario" id="nombres" placeholder="Ingrese su Usuario" value="<%= body.nombres ? body.nombres : ''%>" >
+    <div class="invalid-feedback"><%= errors.password ? errors.password.msg : ''%></div>
     <input class="controls" type="password" name="password" id="nombres" placeholder="Ingrese su Contraseña" >
     <input type="checkbox" name="recordar">
     <label for="">Recordame</label>
