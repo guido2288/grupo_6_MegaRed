@@ -18,24 +18,17 @@
 <section class="form-register">
     <h4>Formulario de Registro</h4>
     <form action="" method="POST" enctype="multipart/form-data">
-        <div>
-          <% if (typeof errors != "undefined") { %>
-              <ul>
-                  <% for (let i =0; i < errors.length; i++) { %>
-                    <li>
-                        <%=errors[i].msg%>
-                    </li>
-                  <% } %>
-                </ul>
-          <% } %>
-
-        </div>  
-
+ 
+    <div class="invalid-feedback"><%= errors.usuario ? errors.usuario.msg : ''%></div>
     <input class="controls" type="text" name="usuario" id="nombres" placeholder="Ingrese su Usuario" value="<%= body.usuario ? body.usuario : ''%>">
+    <div class="invalid-feedback"><%= errors.email ? errors.email.msg : ''%></div>
     <input class="controls" type="email0" name="email" id="nombres" placeholder="Ingrese su Correo" value="<%= body.email ? body.email : ''%>">
+    <div class="invalid-feedback"><%= errors.password ? errors.password.msg : ''%></div>
     <input class="controls" type="password" name="password" id="nombres" placeholder="Ingrese su Contraseña minimo de 6 caracteres">
+    <div class="invalid-feedback"><%= errors.Cpassword ? errors.Cpassword.msg : ''%></div>
     <input class="controls" type="password" name="Cpassword" id="nombres" placeholder="Repita su Contraseña">
 
+    <div class="invalid-feedback"><%= errors.avatar ? errors.avatar.msg : ''%></div>
     <p class= "cAvatar">Carga tu Avatar</p>
     <input type="file" name="avatar">
     <p>Estoy de acuerdo con <a href="#">Terminos y condiciones</a></p>

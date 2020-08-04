@@ -9,7 +9,7 @@ const loginService = require ("../Services/loginService")
 
 let userController = {
     "register" : function(req, res) {
-       res.render("register" , {body : {} })
+       res.render("register" , {errors : {} ,body : {} })
     },
        create : function (req, res, next) {
            //Validación de usuario
@@ -25,7 +25,7 @@ let userController = {
              //almacenar Usuario registrado en BD
              db.Users.create(usuario).then(function(user){
                 loginService.loginUser(req, res, user);              
-                return res.render("home", {usuario: usuario.name});
+                return res.render("perfil");
 
              })
              .catch(function(error){
@@ -35,7 +35,8 @@ let userController = {
 
              
             }else {
-                return res.render ("register", {errors: errors.errors , body : req.body}  )
+                console.log(errors.mapped())
+                return res.render ("register", {errors: errors.mapped() , body : req.body}  )
             }
        
      },
@@ -44,30 +45,35 @@ let userController = {
     
     
     "login" : function (req, res) {
-         res.render("login" , {errors : {} , body : {}})
-        //aca va con la base de datos
-        db.Users.findAll()
-            .then(function(resultado){
-                return res.send(resultado)
-            })
+         res.render("login" , {errors : {} , body : {} })
+         console.log(res.locals.logeado)
+
     },
     "loginPost" : function (req, res) {
         //Errores campos vacios
         let errors = validationResult(req);
         console.log(errors.mapped());
         if(!errors.isEmpty()) { 
-            return res.render ("login", {errors: errors.errors ,body : req.body}) 
+            return res.render ("login", {errors: errors.mapped() ,body : req.body}) 
             }; 
 
-        
+
 
         
         //trabajo con BD Login
         db.Users.findOne({where : {name : req.body.usuario}}).then(async (user) => {
+
+            //guardar la cookie de mantenerme Logueado
+            if (req.body.recordar) {
+            //cookie que expire en 90 días
+            res.cookie("_rememberUser_", req.body.usuario, {expires: new Date(Date.now() + 1000*60*60*24*90)})
+            }
+
+
             loginService.loginUser(req, res, user);
             
-                    
-            return res.render("home", {usuario: req.session.user}) 
+            console.log(res.locals.logeado)
+            return res.redirect("/perfil") 
         }).catch((error) => {
             console.error(error);
             return res.redirect('login');
@@ -90,8 +96,11 @@ let userController = {
         "cargaProducto" : function(req, res) {
             res.render("cargaProducto",{usuario: req.session.user})
         },
+        "perfil" : function(req, res) {
+            res.render("perfil")
+        },
         "salir": function(req,res){
-            req.session.logeado = false;
+            loginService.logOutSession(req, res)
 
             res.redirect("/")
         }
