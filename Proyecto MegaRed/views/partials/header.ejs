@@ -8,7 +8,7 @@
         <nav class="navegation">
             <ul>
                 
-              <% if (locals.logeado) { %>
+              <% if (locals.logeado === true) { %>
               <li><a href="../carrito">Mis Compras</a></li>
               <li><a href="/perfil"> <%= user.name %></a></li>
               <li><a href="/salir">Salir</a></li>

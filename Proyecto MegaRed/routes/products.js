@@ -6,6 +6,8 @@ let { check, validationResult, body } = require("express-validator")
 
 let userController = require ("../controllers/productsControllers");
 
+const adminMdw = require ("../Middleware/admin");
+
 //configuracion multer para subir la imagen
 var storage = multer.diskStorage({
     destination: function (req, file, cb) {
@@ -23,7 +25,7 @@ var storage = multer.diskStorage({
 router.get("/", userController.products);
 
 //envio productos a /products
-router.post("/" , upload.any(),
+router.post("/" ,adminMdw, upload.any(),
 [ check("nombre").isLength({min:5}).withMessage("El titulo debe tener 5 caracteres como mínimo"),
 check("descripcion").isLength({min:50}).withMessage("La descripcion debe tener 50 caracteres como mínimo"),
 check("genre").isLength({min:1}).withMessage("Debes seleccionar el genero"),
@@ -45,11 +47,11 @@ body("imagen").custom((value, { req }) => {
 
 userController.create); 
 
-router.get("/create", userController.formularioProducto);
+router.get("/create",adminMdw, userController.formularioProducto);
 
 router.get("/:id", userController.detalle);
 
-router.put("/:id",upload.any(),
+router.put("/:id",adminMdw,upload.any(),
 
 [ check("nombre").isLength({min:5}).withMessage("El titulo debe tener 5 caracteres como mínimo"),
 check("descripcion").isLength({min:50}).withMessage("La descripcion debe tener 50 caracteres como mínimo"),
@@ -75,9 +77,9 @@ body("imagen").custom((value, { req }) => {
 
 
 
-router.delete("/:id",userController.delete);
+router.delete("/:id",adminMdw, userController.delete);
 
-router.get("/:id/edit", userController.formEdit);
+router.get("/:id/edit",adminMdw,userController.formEdit);
 
 
 
