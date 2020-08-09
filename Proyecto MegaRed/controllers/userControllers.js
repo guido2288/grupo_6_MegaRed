@@ -2,7 +2,8 @@ let fs = require("fs");
 let bcrypt = require ("bcrypt");
 let {check, validationResult, body} = require ("express-validator");
 const db = require("../database/models")
-const loginService = require ("../Services/loginService")
+const loginService = require ("../Services/loginService");
+const { locals } = require("../app");
 
 
 
@@ -102,7 +103,7 @@ let userController = {
         "salir": function(req,res){
             loginService.logOutSession(req, res)
 
-            res.redirect("/")
+            res.redirect("/" )
         }
 }
     

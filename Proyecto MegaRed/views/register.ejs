@@ -17,22 +17,22 @@
 
 <section class="form-register">
     <h4>Formulario de Registro</h4>
-    <form action="" method="POST" enctype="multipart/form-data">
+    <form action="" method="POST" enctype="multipart/form-data" class="registro" id="formulario">
  
-    <div class="invalid-feedback"><%= errors.usuario ? errors.usuario.msg : ''%></div>
-    <input class="controls" type="text" name="usuario" id="nombres" placeholder="Ingrese su Usuario" value="<%= body.usuario ? body.usuario : ''%>">
-    <div class="invalid-feedback"><%= errors.email ? errors.email.msg : ''%></div>
-    <input class="controls" type="email0" name="email" id="nombres" placeholder="Ingrese su Correo" value="<%= body.email ? body.email : ''%>">
-    <div class="invalid-feedback"><%= errors.password ? errors.password.msg : ''%></div>
-    <input class="controls" type="password" name="password" id="nombres" placeholder="Ingrese su Contraseña minimo de 6 caracteres">
-    <div class="invalid-feedback"><%= errors.Cpassword ? errors.Cpassword.msg : ''%></div>
-    <input class="controls" type="password" name="Cpassword" id="nombres" placeholder="Repita su Contraseña">
+    <div class="invalid-feedback" id="invalidUsuario"><%= errors.usuario ? errors.usuario.msg : ''%></div>
+    <input class="controls" type="text" name="usuario" id="usuario"  placeholder="Ingrese su Usuario" value="<%= body.usuario ? body.usuario : ''%>">
+    <div class="invalid-feedback" id="invalidEmail"><%= errors.email ? errors.email.msg : ''%></div>
+    <input class="controls" type="text" name="email" id="email"  placeholder="Ingrese su Correo" value="<%= body.email ? body.email : ''%>">
+    <div class="invalid-feedback" id="invalidPassword"><%= errors.password ? errors.password.msg : ''%></div>
+    <input class="controls" type="password" name="password" id="password"  placeholder="Ingrese su Contraseña minimo de 6 caracteres">
+    <div class="invalid-feedback" id="invalidCpassword"><%= errors.Cpassword ? errors.Cpassword.msg : ''%></div>
+    <input class="controls" type="password" name="Cpassword" id="cpassword"   placeholder="Repita su Contraseña">
 
-    <div class="invalid-feedback"><%= errors.avatar ? errors.avatar.msg : ''%></div>
+    <div class="invalid-feedback" id="invalidAvatar"><%= errors.avatar ? errors.avatar.msg : ''%></div>
     <p class= "cAvatar">Carga tu Avatar</p>
-    <input type="file" name="avatar">
+    <input type="file" name="avatar" id="avatar">
     <p>Estoy de acuerdo con <a href="#">Terminos y condiciones</a></p>
-    <input class="boton" type="submit" value="Registrarse">
+    <input class="boton" type="submit" value="Registrarse" id="enviar">
 </form>
 
     <p><a href="/login">¿Ya tenes cuenta?</a></p>
@@ -40,6 +40,8 @@
   <!--------Footer------------------->
   <%- include("partials/footer"); %>
 
+  <!--JAVASCRIPT-->
+  <script src="js/registroUser.js"></script>
 <body>
     
 </body>
