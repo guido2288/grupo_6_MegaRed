@@ -11,8 +11,10 @@ module.exports = {
     },
     logOutSession: function (req,res) {
        
-            req.session.logeado = false
-            res.locals.logeado = false
+            req.session.logeado = false;
+            res.locals.user = false; 
+            res.locals.logeado = false;
+            req.session.user = false;
         console.log(res.locals.logeado)
     }
     

@@ -15,7 +15,9 @@
 <%- include("partials/header"); %>
 
 <!--------products------------------->
+
 <section class="container-novedades">
+   <% if (user && user.admin === 1) {%>
    <article class="add">
       <a href="/products/create">
          <div>
@@ -23,6 +25,7 @@
          </div>
       </a>
    </article>
+   <%}%>
   
    <%for(product of productos){%>
 
@@ -35,12 +38,14 @@
                   </div>
                </div>
             </a>
+            <% if (user && user.admin === 1) {%>
             <div>
                <form method="POST"  action="/products/<%-product.id%>?_method=DELETE">
                   <button onclick="window.location.href='/products/<%-product.id%>/edit'" class="botonProduct" id="borrar">Borrar</button>
                </form>
                <button onclick="window.location.href='/products/<%-product.id%>/edit'" class="botonProduct" id="editar">Editar</button>
             </div>
+            <%}%>
      </article>
   <% } %>
 
