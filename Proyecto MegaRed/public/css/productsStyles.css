@@ -84,11 +84,20 @@ header{
     padding-bottom: 2vh;
 }
 
+.producto a {
+    text-decoration: none;
+    font-size: 20px;
+    color: black;
+}
+
 .photo-container .photo{
     margin-top: 2vh;
     width:100%;
     border-radius: 15px;
+    height: 240px;
 }
+
+
 
 .datos-producto{
     font-family: 'Roboto', sans-serif;
