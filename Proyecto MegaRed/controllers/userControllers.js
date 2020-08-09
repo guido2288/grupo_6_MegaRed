@@ -85,7 +85,14 @@ let userController = {
         
         } ,
         "home" : function(req, res) {
-            res.render("home",{usuario: req.session.user} );
+            db.Products.findAll({limit:4})
+            .then(function(productos){
+                db.Products.findAll({offset:4, limit:4})
+                    .then(function(productos2)
+                    {return res.render("home", {productos,productos2,usuario: req.session.user})})
+                         
+            })
+            
             
         },
         "carrito" : function(req, res) {

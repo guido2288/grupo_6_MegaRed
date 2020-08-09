@@ -55,55 +55,21 @@
 
 
  <section class="container-productos">
-   <article class="producto">
-       <a href="/products/9">
+  <%for(pr of productos){%>
+    <article class="producto">
+       <a href="/products/<%=pr.id%>">
        <div class="photo-container">
-        <img class="photo" src="/imagenes/imagen-1592193218773.jpg" alt="Mortal Kombat 11">
+        <img class="photo" src="<%=pr.img%>" alt="<%=pr.name%>">
        </div>
        <div class="datos-producto">
-       <h2>$3.500</h2>
-       <p>Mortal Kombat 11</p>
+       <h2><%=pr.precio%></h2>
+       <p><%=pr.name%>/p>
        <h2 class="descuento">20% OFF</h2>
     </a>
     </div>
    </article>
-   
-   <article class="producto">
-    <a href="/products/5">
-    <div class="photo-container">
-     <img class="photo" src="/imagenes/imagen-1592191514911.jpg" alt="Moster Hunter World Iceborne">
-    </div>
-    <div class="datos-producto">
-    <h2>$3.200</h2>
-    <p>Moster Hunter World Iceborne</p>
-    <h2 class="descuento">10% OFF</h2>
- </a>
- </div>
-</article>
-<article class="producto">
-    <a href="/products/7">
-    <div class="photo-container">
-     <img class="photo" src="/imagenes/imagen-1591816599222.jpg" alt="God Of War">
-    </div>
-    <div class="datos-producto">
-    <h2>$2.000</h2>
-    <p>God Of War</p>
-    <h2 class="descuento">50% OFF</h2>
- </a>
- </div>
-</article>
-<article class="producto">
-    <a href="/products/8">
-    <div class="photo-container">
-     <img class="photo" src="/imagenes/imagen-1596996986132.jpg" alt="Call Of Duty Black Ops 4">
-    </div>
-    <div class="datos-producto">
-    <h2>$4.000</h2>
-    <p>Call Of Duty Black Ops 4</p>
-    <h2 class="descuento">10% OFF</h2>
- </a>
- </div>
-</article>
+  <%}%>
+
 </section>
 <!----------Preventas-------------->
  
@@ -114,52 +80,20 @@
 </div>
 
 <section class="container-novedades">
+  <%for(pr of productos2){%>
   <article class="producto">
-      <a href="#">
+      <a href="/products/<%=pr.id%>">
       <div class="photo-container">
-       <img class="photo" src="/Imagenes/Ghost of Tsushima.jpg" alt="Notebook Asus Intel Core I5">
+       <img class="photo" src="<%=pr.img%>" alt="Notebook Asus Intel Core I5">
        <div class="preventa-datos">
-       <h2>$6.999</h2>
+       <h2><%=pr.precio%></h2>
     </div>
       </div>
 
    </a>
   </article>
+  <%}%>
   
-  <article class="producto">
-   <a href="#">
-   <div class="photo-container">
-    <img class="photo" src="/Imagenes/Assassin´s Valhalla.jpg" alt="Notebook Asus Intel Core I5">
-   
-   <div class="preventa-datos">
-    <h2>$7.499</h2>
-</div>
- </div>
-</a>
-</article>
-<article class="producto">
-   <a href="#">
-   <div class="photo-container">
-    <img class="photo" src="/Imagenes/The Last 2.jpg" alt="Notebook Asus Intel Core I5">
- 
-   <div class="preventa-datos">
-    <h2>$6.999</h2>
-</div>
- </div>
-   
-</a>
-</article>
-<article class="producto">
-   <a href="#">
-   <div class="photo-container">
-    <img class="photo" src="/Imagenes/Ciberpunk.jpg" alt="Notebook Asus Intel Core I5">
-   
-   <div class="preventa-datos">
-    <h2>$6.999</h2>
- </div>
-</div>
-</a>
-</article>
 
 </section>
 
